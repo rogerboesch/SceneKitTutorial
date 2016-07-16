@@ -22,7 +22,6 @@ class Player : SCNNode {
 
     private var _lookAtNode: SCNNode?
     private var _cameraNode: SCNNode?
-    
     private var _playerNode: SCNNode?
     
     // -------------------------------------------------------------------------
@@ -31,29 +30,34 @@ class Player : SCNNode {
     override init() {
         super.init()
         
+        // Create player node
         let cubeGeometry = SCNBox(width: 0.5, height: 0.5, length: 0.5, chamferRadius: 0.0)
         _playerNode = SCNNode(geometry: cubeGeometry)
+        _playerNode?.isHidden = true
+        addChildNode(_playerNode!)
+
         let colorMaterial = SCNMaterial()
         cubeGeometry.materials = [colorMaterial]
-        addChildNode(_playerNode!)
-        _playerNode?.isHidden = true
         
         // Look at Node
         _lookAtNode = SCNNode()
         _lookAtNode!.position = lookAtForwardPosition
         addChildNode(_lookAtNode!)
 
+        // Camera Node
         _cameraNode = SCNNode()
         _cameraNode!.camera = SCNCamera()
         _cameraNode!.position = cameraFowardPosition
         _cameraNode!.camera!.zNear = 0.1
         _cameraNode!.camera!.zFar = 50
+        self.addChildNode(_cameraNode!)
+
+        // Link them
         let constraint1 = SCNLookAtConstraint(target: _lookAtNode)
         constraint1.gimbalLockEnabled = true
         _cameraNode!.constraints = [constraint1]
         
-        self.addChildNode(_cameraNode!)
-
+        // Create a spotlight at the player
         let spotLight = SCNLight()
         spotLight.type = SCNLightTypeSpot
         spotLight.spotInnerAngle = 40.0
@@ -63,13 +67,14 @@ class Player : SCNNode {
         let spotLightNode = SCNNode()
         spotLightNode.light = spotLight
         spotLightNode.position = SCNVector3(x: 1.0, y: 5.0, z: -2.0)
+        self.addChildNode(spotLightNode)
 
+        // Linnk it
         let constraint2 = SCNLookAtConstraint(target: self)
         constraint2.gimbalLockEnabled = true
         spotLightNode.constraints = [constraint2]
-        
-        self.addChildNode(spotLightNode)
-        
+
+        // Create additional omni light
         let lightNode = SCNNode()
         lightNode.light = SCNLight()
         lightNode.light!.type = SCNLightTypeOmni
