@@ -54,16 +54,16 @@ class Player : SCNNode {
 
         // Link them
         let constraint1 = SCNLookAtConstraint(target: _lookAtNode)
-        constraint1.gimbalLockEnabled = true
+        constraint1.isGimbalLockEnabled = true
         _cameraNode!.constraints = [constraint1]
         
         // Create a spotlight at the player
         let spotLight = SCNLight()
-        spotLight.type = SCNLightTypeSpot
+        spotLight.type = SCNLight.LightType.spot
         spotLight.spotInnerAngle = 40.0
         spotLight.spotOuterAngle = 80.0
         spotLight.castsShadow = true
-        spotLight.color = UIColor.white()
+        spotLight.color = UIColor.white
         let spotLightNode = SCNNode()
         spotLightNode.light = spotLight
         spotLightNode.position = SCNVector3(x: 1.0, y: 5.0, z: -2.0)
@@ -71,14 +71,14 @@ class Player : SCNNode {
 
         // Linnk it
         let constraint2 = SCNLookAtConstraint(target: self)
-        constraint2.gimbalLockEnabled = true
+        constraint2.isGimbalLockEnabled = true
         spotLightNode.constraints = [constraint2]
 
         // Create additional omni light
         let lightNode = SCNNode()
         lightNode.light = SCNLight()
-        lightNode.light!.type = SCNLightTypeOmni
-        lightNode.light!.color = UIColor.darkGray()
+        lightNode.light!.type = SCNLight.LightType.omni
+        lightNode.light!.color = UIColor.darkGray
         lightNode.position = SCNVector3(x: 0, y: 10.00, z: -2)
         self.addChildNode(lightNode)
     }

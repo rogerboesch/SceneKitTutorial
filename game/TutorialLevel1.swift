@@ -36,7 +36,7 @@ class TutorialLevel1: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDeleg
         self.rootNode.addChildNode(_player!)
 
         let moveAction = SCNAction.moveBy(x: 0, y: 0, z: 200, duration: 20)
-        _player!.run(moveAction)
+        _player!.runAction(moveAction)
     }
 
     // -------------------------------------------------------------------------
@@ -50,7 +50,7 @@ class TutorialLevel1: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDeleg
             return generator.valueFor(x: x, y: y)
         }
 
-        _terrain!.create(withColor: UIColor.green())
+        _terrain!.create(withColor: UIColor.green)
         _terrain!.position = SCNVector3Make(0, 0, 0)
         self.rootNode.addChildNode(_terrain!)
     }

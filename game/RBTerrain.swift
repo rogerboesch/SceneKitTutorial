@@ -25,7 +25,7 @@ class RBTerrain: SCNNode {
     private var _terrainLength = 32
     private var _terrainGeometry: SCNGeometry?
     private var _texture: UIImage?
-    private var _color = UIColor.white()
+    private var _color = UIColor.white
     
     var formula: RBTerrainFormula?
     
@@ -105,6 +105,13 @@ class RBTerrain: SCNNode {
     // MARK: - Geometry creation
 
     private func createGeometry() ->SCNGeometry {
+        let cint: CInt = 0
+        let sizeOfCInt = MemoryLayout.size(ofValue: cint)
+        let float: Float = 0.0
+        let sizeOfFloat = MemoryLayout.size(ofValue: float)
+        let vec2: vector_float2 = vector2(0, 0)
+        let sizeOfVecFloat = MemoryLayout.size(ofValue: vec2)
+
         let w: CGFloat = CGFloat(_terrainWidth)
         let h: CGFloat = CGFloat(_terrainLength)
         let scale: Double = Double(_heightScale)
@@ -157,11 +164,11 @@ class RBTerrain: SCNNode {
         var geometry: CInt = 0
         while (geometry < CInt(vertexCount)) {
             let bytes: [CInt] = [geometry, geometry+2, geometry+3, geometry, geometry+1, geometry+2]
-            geometryData.append(bytes, length: sizeof(CInt.self)*6)
+            geometryData.append(bytes, length: sizeOfCInt*6)
             geometry += 4
         }
 
-        let element = SCNGeometryElement(data: geometryData as Data, primitiveType: .triangles, primitiveCount: vertexCount/2, bytesPerIndex: sizeof(CInt.self))
+        let element = SCNGeometryElement(data: geometryData as Data, primitiveType: .triangles, primitiveCount: vertexCount/2, bytesPerIndex: sizeOfCInt)
         elements.append(element)
         
         for normalIndex in 0...vertexCount-1 {
@@ -169,16 +176,8 @@ class RBTerrain: SCNNode {
         }
         sources.append(SCNGeometrySource(normals: normals, count: vertexCount))
 
-        let uvData = NSData(bytes: uvList, length: uvList.count * sizeof(vector_float2.self))
-        let uvSource = SCNGeometrySource(data: uvData as Data,
-                                         semantic: SCNGeometrySourceSemanticTexcoord,
-                                         vectorCount: uvList.count,
-                                         floatComponents: true,
-                                         componentsPerVector: 2,
-                                         bytesPerComponent: sizeof(Float.self),
-                                         dataOffset: 0,
-                                         dataStride: sizeof(vector_float2.self))
-        
+        let uvData = NSData(bytes: uvList, length: uvList.count * sizeOfVecFloat)
+        let uvSource = SCNGeometrySource(data: uvData as Data, semantic: SCNGeometrySource.Semantic.texcoord, vectorCount: uvList.count, usesFloatComponents: true, componentsPerVector: 2, bytesPerComponent: sizeOfFloat, dataOffset: 0, dataStride: sizeOfVecFloat)
         sources.append(uvSource)
         
         _terrainGeometry = SCNGeometry(sources: sources, elements: elements)
@@ -208,7 +207,7 @@ class RBTerrain: SCNNode {
             self.texture = image
         }
         else {
-            self.color = UIColor.green()
+            self.color = UIColor.green
         }
     }
     

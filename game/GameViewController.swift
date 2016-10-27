@@ -33,27 +33,9 @@ class GameViewController: UIViewController {
         _sceneView!.scene = _level
         _sceneView!.allowsCameraControl = false
         _sceneView!.showsStatistics = true
-        _sceneView!.backgroundColor = UIColor.black()
+        _sceneView!.backgroundColor = UIColor.black
         _sceneView!.debugOptions = .showWireframe
         self.view = _sceneView
-    }
-
-    // -------------------------------------------------------------------------
-
-    override func shouldAutorotate() -> Bool {
-        return true
-    }
-
-    // -------------------------------------------------------------------------
-
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
-
-    // -------------------------------------------------------------------------
-
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return .landscape
     }
 
     // -------------------------------------------------------------------------

@@ -22,14 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // ------------------------------------------------------------------------------
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func applicationDidFinishLaunching(_ application: UIApplication) {
         _gameViewController = GameViewController()
         
-        _window = UIWindow(frame: UIScreen.main().bounds)
+        _window = UIWindow(frame: UIScreen.main.bounds)
         _window?.rootViewController = _gameViewController
         _window?.makeKeyAndVisible()
-        
-        return true
     }
 
     // ------------------------------------------------------------------------------
