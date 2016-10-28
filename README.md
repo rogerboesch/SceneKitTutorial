@@ -4,6 +4,8 @@ You find first tutorial at:
 
 http://www.rogerboesch.com:2368/scenekit-tutorial-series-from-zero-to-hero/
 
+Remark: Code now updated to be Swift 3 compliant
+
 
 ### The Game
 This tutorial is a companion work I do parallel on the development of my next upcoming 3D Game which uses just SceneKit and it's written entirely with Swift 3.
