@@ -18,15 +18,27 @@ import SceneKit
 class GameViewController: UIViewController {
 
     var _sceneView: SCNView?
-    var _level: TutorialLevel1?
+    var _level: TutorialLevel2?
     
+    // -------------------------------------------------------------------------
+    // MARK: - Swipe gestures
+    
+    func handleSwipe(_ gestureRecognize: UISwipeGestureRecognizer) {
+        if (gestureRecognize.direction == .left) {
+            _level!.swipeLeft()
+        }
+        else if (gestureRecognize.direction == .right) {
+            _level!.swipeRight()
+        }
+    }
+   
     // -------------------------------------------------------------------------
     // MARK: - ViewController life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        _level = TutorialLevel1()
+        _level = TutorialLevel2()
         _level!.create()
         
         _sceneView = SCNView()
@@ -34,8 +46,17 @@ class GameViewController: UIViewController {
         _sceneView!.allowsCameraControl = false
         _sceneView!.showsStatistics = true
         _sceneView!.backgroundColor = UIColor.black
-        _sceneView!.debugOptions = .showWireframe
+        //_sceneView!.debugOptions = .showWireframe
         self.view = _sceneView
+        
+        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+        swipeLeftGesture.direction = .left
+        _sceneView!.addGestureRecognizer(swipeLeftGesture)
+        
+        let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+        swipeRightGesture.direction = .right
+        _sceneView!.addGestureRecognizer(swipeRightGesture)
+
     }
 
     // -------------------------------------------------------------------------
