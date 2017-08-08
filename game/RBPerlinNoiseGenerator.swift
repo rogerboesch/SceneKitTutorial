@@ -24,7 +24,7 @@ class RBPerlinNoiseGenerator {
     // -------------------------------------------------------------------------
 
     private func interpolate(a: Double, b: Double, x: Double) ->Double {
-        let ft: Double = x * M_PI
+        let ft: Double = x * Double.pi
         let f: Double = (1.0-cos(ft)) * 0.5
         
         return a*(1.0-f)+b*f

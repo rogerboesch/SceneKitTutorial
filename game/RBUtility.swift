@@ -16,7 +16,7 @@
 
 import UIKit
 
-let pi = CGFloat(M_PI)
+let pi = CGFloat(Double.pi)
 
 // -----------------------------------------------------------------------------
 // MARK: - Deg/Rad

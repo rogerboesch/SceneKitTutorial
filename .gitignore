@@ -1,6 +1,15 @@
+#
+# General
+#
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+#
 # Xcode
 #
 build/
+DerivedData/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
