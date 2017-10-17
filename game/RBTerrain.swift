@@ -156,7 +156,7 @@ class RBTerrain: SCNNode {
             }
         }
 
-        let source = SCNGeometrySource(vertices: vertices, count: vertexCount)
+        let source = SCNGeometrySource(vertices: vertices)
         sources.append(source)
 
         let geometryData = NSMutableData()
@@ -174,7 +174,7 @@ class RBTerrain: SCNNode {
         for normalIndex in 0...vertexCount-1 {
             normals[normalIndex] = SCNVector3Make(0, 0, -1)
         }
-        sources.append(SCNGeometrySource(normals: normals, count: vertexCount))
+        sources.append(SCNGeometrySource(normals: normals))
 
         let uvData = NSData(bytes: uvList, length: uvList.count * sizeOfVecFloat)
         let uvSource = SCNGeometrySource(data: uvData as Data, semantic: SCNGeometrySource.Semantic.texcoord, vectorCount: uvList.count, usesFloatComponents: true, componentsPerVector: 2, bytesPerComponent: sizeOfFloat, dataOffset: 0, dataStride: sizeOfVecFloat)

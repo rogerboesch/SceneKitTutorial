@@ -23,7 +23,7 @@ class GameViewController: UIViewController {
     // -------------------------------------------------------------------------
     // MARK: - Swipe gestures
     
-    func handleSwipe(_ gestureRecognize: UISwipeGestureRecognizer) {
+    @objc private func handleSwipe(_ gestureRecognize: UISwipeGestureRecognizer) {
         if (gestureRecognize.direction == .left) {
             _level!.swipeLeft()
         }
