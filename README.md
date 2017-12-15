@@ -1,14 +1,15 @@
 ### The Blog
 The code is part of my SceneKit Tutorial Series: From Zero to Hero.
-You find first tutorial at:
+You find the tutorials at:
 
-http://www.rogerboesch.com:2368/scenekit-tutorial-series-from-zero-to-hero/
+https://rogerboesch.github.io/scenekit/tutorial/games/2016/07/15/scenekit-zerotohero-I.html
+https://rogerboesch.github.io/scenekit/tutorial/games/2016/10/26/scenekit-zerotohero-II.html
 
-Remark: Code now updated to be Swift 3 compliant
+Remark: Code now updated to be Swift 4 compliant
 
 
 ### The Game
-This tutorial is a companion work I do parallel on the development of my next upcoming 3D Game which uses just SceneKit and it's written entirely with Swift 3.
+This tutorial is a companion work I do parallel on the development of my next upcoming 3D Game which uses just SceneKit and it's written entirely with Swift 4.
 
 ### For who is this Tutorial?
 It's not for the absolute beginner or novice, because I assume things like Swift notation, trigonometric know-how etc. On the other hand you don't have to learn all at the begin. I have also started using some given classes without really understand the meaning. So it is with the terrain class RBTerrain. You can use it just like it is and read the code later again when you have more know-how. The most important is that you understand the principles.
