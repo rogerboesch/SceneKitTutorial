@@ -34,7 +34,6 @@
 		DB16F23E1D34C292006BA99C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB55EEE91FE38E9900C2E1CC /* partII.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = partII.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB55EEF91FE38E9A00C2E1CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB55EEFF1FE38FA800C2E1CC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DB55EF001FE38FA800C2E1CC /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
 		DB55EF011FE38FA900C2E1CC /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		DB55EF051FE38FB200C2E1CC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -129,7 +128,6 @@
 				DB55EF451FE3939400C2E1CC /* Base.lproj */,
 				DB55EF011FE38FA900C2E1CC /* art.scnassets */,
 				DB55EF001FE38FA800C2E1CC /* assets.xcassets */,
-				DB55EEFF1FE38FA800C2E1CC /* Default-568h@2x.png */,
 			);
 			name = assets;
 			sourceTree = "<group>";
