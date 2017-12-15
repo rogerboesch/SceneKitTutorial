@@ -16,7 +16,7 @@ import SceneKit
 
 // -----------------------------------------------------------------------------
 
-class PlayerTutorial2 : SCNNode {
+class Player : SCNNode {
     private let lookAtForwardPosition = SCNVector3Make(0.0, -1.0, 6.0)
     private let cameraFowardPosition = SCNVector3(x: 5, y: 1.0, z: -5)
 

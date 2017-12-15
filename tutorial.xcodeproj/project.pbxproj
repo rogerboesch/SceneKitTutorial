@@ -7,39 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DB16F2311D34C292006BA99C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB16F2301D34C291006BA99C /* AppDelegate.swift */; };
-		DB16F2331D34C292006BA99C /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DB16F2321D34C292006BA99C /* art.scnassets */; };
-		DB16F2351D34C292006BA99C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB16F2341D34C292006BA99C /* GameViewController.swift */; };
-		DB16F23A1D34C292006BA99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB16F2391D34C292006BA99C /* Assets.xcassets */; };
-		DB16F2451D34C2AF006BA99C /* RBTerrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB16F2441D34C2AF006BA99C /* RBTerrain.swift */; };
-		DB275DDB1D3606A700A7914C /* TutorialLevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB275DDA1D3606A700A7914C /* TutorialLevel1.swift */; };
-		DB275DDF1D36144A00A7914C /* RBUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB275DDE1D36144A00A7914C /* RBUtility.swift */; };
-		DB3140301D38317500BE7E04 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB31402F1D38317500BE7E04 /* Default-568h@2x.png */; };
-		DB7E6E6E1D351DDE00AD7379 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7E6E6D1D351DDE00AD7379 /* Player.swift */; };
-		DBD771131DC348B3008BC60D /* TutorialLevel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD771121DC348B3008BC60D /* TutorialLevel2.swift */; };
-		DBD771171DC3498A008BC60D /* PlayerTutorial2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD771161DC3498A008BC60D /* PlayerTutorial2.swift */; };
-		DBEB44471D34F79700316C38 /* RBPerlinNoiseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB44461D34F79700316C38 /* RBPerlinNoiseGenerator.swift */; };
+		DB55EF031FE38FA900C2E1CC /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB55EF001FE38FA800C2E1CC /* assets.xcassets */; };
+		DB55EF041FE38FA900C2E1CC /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DB55EF011FE38FA900C2E1CC /* art.scnassets */; };
+		DB55EF081FE38FC200C2E1CC /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB55EF001FE38FA800C2E1CC /* assets.xcassets */; };
+		DB55EF091FE38FC700C2E1CC /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DB55EF011FE38FA900C2E1CC /* art.scnassets */; };
+		DB55EF0F1FE38FE900C2E1CC /* RBPerlinNoiseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55EF0A1FE38FE900C2E1CC /* RBPerlinNoiseGenerator.swift */; };
+		DB55EF101FE38FE900C2E1CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55EF0B1FE38FE900C2E1CC /* AppDelegate.swift */; };
+		DB55EF111FE38FE900C2E1CC /* RBTerrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55EF0C1FE38FE900C2E1CC /* RBTerrain.swift */; };
+		DB55EF121FE38FE900C2E1CC /* RBUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55EF0D1FE38FE900C2E1CC /* RBUtility.swift */; };
+		DB55EF141FE3903300C2E1CC /* RBPerlinNoiseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55EF0A1FE38FE900C2E1CC /* RBPerlinNoiseGenerator.swift */; };
+		DB55EF151FE3903300C2E1CC /* RBTerrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55EF0C1FE38FE900C2E1CC /* RBTerrain.swift */; };
+		DB55EF161FE3903300C2E1CC /* RBUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55EF0D1FE38FE900C2E1CC /* RBUtility.swift */; };
+		DB55EF181FE3903300C2E1CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55EF0B1FE38FE900C2E1CC /* AppDelegate.swift */; };
+		DB55EF1B1FE3904D00C2E1CC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55EF191FE3904D00C2E1CC /* Player.swift */; };
+		DB55EF1C1FE3904D00C2E1CC /* GameLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55EF1A1FE3904D00C2E1CC /* GameLevel.swift */; };
+		DB55EF1F1FE390BF00C2E1CC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55EF1D1FE390BF00C2E1CC /* Player.swift */; };
+		DB55EF201FE390BF00C2E1CC /* GameLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55EF1E1FE390BF00C2E1CC /* GameLevel.swift */; };
+		DB55EF221FE3914900C2E1CC /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55EF211FE3914900C2E1CC /* GameViewController.swift */; };
+		DB55EF241FE3923B00C2E1CC /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55EF231FE3923B00C2E1CC /* GameViewController.swift */; };
+		DB55EF461FE3939400C2E1CC /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DB55EF451FE3939400C2E1CC /* Base.lproj */; };
+		DB55EF471FE393B900C2E1CC /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DB55EF451FE3939400C2E1CC /* Base.lproj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DB16F22D1D34C291006BA99C /* game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB16F2301D34C291006BA99C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB16F2321D34C292006BA99C /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		DB16F2341D34C292006BA99C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		DB16F2391D34C292006BA99C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB16F22D1D34C291006BA99C /* partI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = partI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB16F23E1D34C292006BA99C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB16F2441D34C2AF006BA99C /* RBTerrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBTerrain.swift; sourceTree = "<group>"; };
-		DB275DDA1D3606A700A7914C /* TutorialLevel1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialLevel1.swift; path = game/TutorialLevel1.swift; sourceTree = "<group>"; };
-		DB275DDE1D36144A00A7914C /* RBUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBUtility.swift; sourceTree = "<group>"; };
-		DB31402F1D38317500BE7E04 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		DB7E6E6D1D351DDE00AD7379 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = game/Player.swift; sourceTree = "<group>"; };
-		DBD771121DC348B3008BC60D /* TutorialLevel2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialLevel2.swift; sourceTree = "<group>"; };
-		DBD771161DC3498A008BC60D /* PlayerTutorial2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTutorial2.swift; sourceTree = "<group>"; };
-		DBEB44461D34F79700316C38 /* RBPerlinNoiseGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBPerlinNoiseGenerator.swift; sourceTree = "<group>"; };
+		DB55EEE91FE38E9900C2E1CC /* partII.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = partII.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB55EEF91FE38E9A00C2E1CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB55EEFF1FE38FA800C2E1CC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DB55EF001FE38FA800C2E1CC /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
+		DB55EF011FE38FA900C2E1CC /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		DB55EF051FE38FB200C2E1CC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DB55EF0A1FE38FE900C2E1CC /* RBPerlinNoiseGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBPerlinNoiseGenerator.swift; sourceTree = "<group>"; };
+		DB55EF0B1FE38FE900C2E1CC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DB55EF0C1FE38FE900C2E1CC /* RBTerrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBTerrain.swift; sourceTree = "<group>"; };
+		DB55EF0D1FE38FE900C2E1CC /* RBUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBUtility.swift; sourceTree = "<group>"; };
+		DB55EF191FE3904D00C2E1CC /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		DB55EF1A1FE3904D00C2E1CC /* GameLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLevel.swift; sourceTree = "<group>"; };
+		DB55EF1D1FE390BF00C2E1CC /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		DB55EF1E1FE390BF00C2E1CC /* GameLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLevel.swift; sourceTree = "<group>"; };
+		DB55EF211FE3914900C2E1CC /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		DB55EF231FE3923B00C2E1CC /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		DB55EF451FE3939400C2E1CC /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DB16F22A1D34C291006BA99C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB55EEE61FE38E9900C2E1CC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -52,7 +72,11 @@
 		DB16F2241D34C291006BA99C = {
 			isa = PBXGroup;
 			children = (
-				DB16F22F1D34C291006BA99C /* game */,
+				DB55EF051FE38FB200C2E1CC /* README.md */,
+				DB55EEFE1FE38F7000C2E1CC /* assets */,
+				DB55EEFD1FE38EAF00C2E1CC /* shared */,
+				DB16F22F1D34C291006BA99C /* partI */,
+				DB55EEEA1FE38E9A00C2E1CC /* partII */,
 				DB16F22E1D34C291006BA99C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,86 +84,62 @@
 		DB16F22E1D34C291006BA99C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DB16F22D1D34C291006BA99C /* game.app */,
+				DB16F22D1D34C291006BA99C /* partI.app */,
+				DB55EEE91FE38E9900C2E1CC /* partII.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DB16F22F1D34C291006BA99C /* game */ = {
+		DB16F22F1D34C291006BA99C /* partI */ = {
 			isa = PBXGroup;
 			children = (
-				DBEB44481D34F8AA00316C38 /* Assets */,
-				DB9EB3F61D382E7D001F9EB4 /* Base */,
-				DB1E64601D3A263900165CD7 /* Skeleton */,
-				DB1E64611D3A265200165CD7 /* Game */,
-			);
-			path = game;
-			sourceTree = "<group>";
-		};
-		DB1E64601D3A263900165CD7 /* Skeleton */ = {
-			isa = PBXGroup;
-			children = (
-				DB16F2341D34C292006BA99C /* GameViewController.swift */,
-				DB16F2301D34C291006BA99C /* AppDelegate.swift */,
-			);
-			name = Skeleton;
-			sourceTree = "<group>";
-		};
-		DB1E64611D3A265200165CD7 /* Game */ = {
-			isa = PBXGroup;
-			children = (
-				DBD771151DC34951008BC60D /* Tutorial 2 */,
-				DBD771141DC34925008BC60D /* Tutorial 1 */,
-			);
-			name = Game;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		DB9EB3F61D382E7D001F9EB4 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				DB275DDE1D36144A00A7914C /* RBUtility.swift */,
-				DBEB44461D34F79700316C38 /* RBPerlinNoiseGenerator.swift */,
-				DB16F2441D34C2AF006BA99C /* RBTerrain.swift */,
-			);
-			name = Base;
-			sourceTree = "<group>";
-		};
-		DBD771141DC34925008BC60D /* Tutorial 1 */ = {
-			isa = PBXGroup;
-			children = (
-				DB7E6E6D1D351DDE00AD7379 /* Player.swift */,
-				DB275DDA1D3606A700A7914C /* TutorialLevel1.swift */,
-			);
-			name = "Tutorial 1";
-			sourceTree = "<group>";
-		};
-		DBD771151DC34951008BC60D /* Tutorial 2 */ = {
-			isa = PBXGroup;
-			children = (
-				DBD771161DC3498A008BC60D /* PlayerTutorial2.swift */,
-				DBD771121DC348B3008BC60D /* TutorialLevel2.swift */,
-			);
-			name = "Tutorial 2";
-			sourceTree = "<group>";
-		};
-		DBEB44481D34F8AA00316C38 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				DB31402F1D38317500BE7E04 /* Default-568h@2x.png */,
-				DB16F2391D34C292006BA99C /* Assets.xcassets */,
-				DB16F2321D34C292006BA99C /* art.scnassets */,
+				DB55EF191FE3904D00C2E1CC /* Player.swift */,
+				DB55EF1A1FE3904D00C2E1CC /* GameLevel.swift */,
+				DB55EF211FE3914900C2E1CC /* GameViewController.swift */,
 				DB16F23E1D34C292006BA99C /* Info.plist */,
 			);
-			name = Assets;
+			path = partI;
+			sourceTree = "<group>";
+		};
+		DB55EEEA1FE38E9A00C2E1CC /* partII */ = {
+			isa = PBXGroup;
+			children = (
+				DB55EF1D1FE390BF00C2E1CC /* Player.swift */,
+				DB55EF1E1FE390BF00C2E1CC /* GameLevel.swift */,
+				DB55EF231FE3923B00C2E1CC /* GameViewController.swift */,
+				DB55EEF91FE38E9A00C2E1CC /* Info.plist */,
+			);
+			path = partII;
+			sourceTree = "<group>";
+		};
+		DB55EEFD1FE38EAF00C2E1CC /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				DB55EF0A1FE38FE900C2E1CC /* RBPerlinNoiseGenerator.swift */,
+				DB55EF0C1FE38FE900C2E1CC /* RBTerrain.swift */,
+				DB55EF0D1FE38FE900C2E1CC /* RBUtility.swift */,
+				DB55EF0B1FE38FE900C2E1CC /* AppDelegate.swift */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		DB55EEFE1FE38F7000C2E1CC /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				DB55EF451FE3939400C2E1CC /* Base.lproj */,
+				DB55EF011FE38FA900C2E1CC /* art.scnassets */,
+				DB55EF001FE38FA800C2E1CC /* assets.xcassets */,
+				DB55EEFF1FE38FA800C2E1CC /* Default-568h@2x.png */,
+			);
+			name = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DB16F22C1D34C291006BA99C /* game */ = {
+		DB16F22C1D34C291006BA99C /* partI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DB16F2411D34C292006BA99C /* Build configuration list for PBXNativeTarget "game" */;
+			buildConfigurationList = DB16F2411D34C292006BA99C /* Build configuration list for PBXNativeTarget "partI" */;
 			buildPhases = (
 				DB16F2291D34C291006BA99C /* Sources */,
 				DB16F22A1D34C291006BA99C /* Frameworks */,
@@ -149,9 +149,26 @@
 			);
 			dependencies = (
 			);
-			name = game;
+			name = partI;
 			productName = game;
-			productReference = DB16F22D1D34C291006BA99C /* game.app */;
+			productReference = DB16F22D1D34C291006BA99C /* partI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB55EEE81FE38E9900C2E1CC /* partII */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB55EEFA1FE38E9A00C2E1CC /* Build configuration list for PBXNativeTarget "partII" */;
+			buildPhases = (
+				DB55EEE51FE38E9900C2E1CC /* Sources */,
+				DB55EEE61FE38E9900C2E1CC /* Frameworks */,
+				DB55EEE71FE38E9900C2E1CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = partII;
+			productName = partII;
+			productReference = DB55EEE91FE38E9900C2E1CC /* partII.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -160,7 +177,7 @@
 		DB16F2251D34C291006BA99C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Roger Boesch";
 				TargetAttributes = {
@@ -169,6 +186,11 @@
 						DevelopmentTeam = F46T393V5A;
 						DevelopmentTeamName = "Roger Boesch";
 						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					DB55EEE81FE38E9900C2E1CC = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = F46T393V5A;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -186,7 +208,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DB16F22C1D34C291006BA99C /* game */,
+				DB16F22C1D34C291006BA99C /* partI */,
+				DB55EEE81FE38E9900C2E1CC /* partII */,
 			);
 		};
 /* End PBXProject section */
@@ -196,9 +219,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB16F2331D34C292006BA99C /* art.scnassets in Resources */,
-				DB16F23A1D34C292006BA99C /* Assets.xcassets in Resources */,
-				DB3140301D38317500BE7E04 /* Default-568h@2x.png in Resources */,
+				DB55EF041FE38FA900C2E1CC /* art.scnassets in Resources */,
+				DB55EF471FE393B900C2E1CC /* Base.lproj in Resources */,
+				DB55EF031FE38FA900C2E1CC /* assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB55EEE71FE38E9900C2E1CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB55EF081FE38FC200C2E1CC /* assets.xcassets in Resources */,
+				DB55EF091FE38FC700C2E1CC /* art.scnassets in Resources */,
+				DB55EF461FE3939400C2E1CC /* Base.lproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,15 +242,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB16F2351D34C292006BA99C /* GameViewController.swift in Sources */,
-				DB275DDB1D3606A700A7914C /* TutorialLevel1.swift in Sources */,
-				DB275DDF1D36144A00A7914C /* RBUtility.swift in Sources */,
-				DBEB44471D34F79700316C38 /* RBPerlinNoiseGenerator.swift in Sources */,
-				DB16F2311D34C292006BA99C /* AppDelegate.swift in Sources */,
-				DBD771131DC348B3008BC60D /* TutorialLevel2.swift in Sources */,
-				DBD771171DC3498A008BC60D /* PlayerTutorial2.swift in Sources */,
-				DB7E6E6E1D351DDE00AD7379 /* Player.swift in Sources */,
-				DB16F2451D34C2AF006BA99C /* RBTerrain.swift in Sources */,
+				DB55EF221FE3914900C2E1CC /* GameViewController.swift in Sources */,
+				DB55EF101FE38FE900C2E1CC /* AppDelegate.swift in Sources */,
+				DB55EF111FE38FE900C2E1CC /* RBTerrain.swift in Sources */,
+				DB55EF121FE38FE900C2E1CC /* RBUtility.swift in Sources */,
+				DB55EF1B1FE3904D00C2E1CC /* Player.swift in Sources */,
+				DB55EF0F1FE38FE900C2E1CC /* RBPerlinNoiseGenerator.swift in Sources */,
+				DB55EF1C1FE3904D00C2E1CC /* GameLevel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB55EEE51FE38E9900C2E1CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB55EF241FE3923B00C2E1CC /* GameViewController.swift in Sources */,
+				DB55EF201FE390BF00C2E1CC /* GameLevel.swift in Sources */,
+				DB55EF141FE3903300C2E1CC /* RBPerlinNoiseGenerator.swift in Sources */,
+				DB55EF161FE3903300C2E1CC /* RBUtility.swift in Sources */,
+				DB55EF181FE3903300C2E1CC /* AppDelegate.swift in Sources */,
+				DB55EF1F1FE390BF00C2E1CC /* Player.swift in Sources */,
+				DB55EF151FE3903300C2E1CC /* RBTerrain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,9 +377,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = game/Info.plist;
+				INFOPLIST_FILE = partI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rogerboesch.tutorial;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rogerboesch.tutorial-partI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -348,13 +393,56 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = game/Info.plist;
+				INFOPLIST_FILE = partI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rogerboesch.tutorial;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rogerboesch.tutorial-partI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		DB55EEFB1FE38E9A00C2E1CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = F46T393V5A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = partII/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rogerboesch.tutorial.partII;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB55EEFC1FE38E9A00C2E1CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F46T393V5A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = partII/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rogerboesch.tutorial.partII;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -370,11 +458,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DB16F2411D34C292006BA99C /* Build configuration list for PBXNativeTarget "game" */ = {
+		DB16F2411D34C292006BA99C /* Build configuration list for PBXNativeTarget "partI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB16F2421D34C292006BA99C /* Debug */,
 				DB16F2431D34C292006BA99C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB55EEFA1FE38E9A00C2E1CC /* Build configuration list for PBXNativeTarget "partII" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB55EEFB1FE38E9A00C2E1CC /* Debug */,
+				DB55EEFC1FE38E9A00C2E1CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

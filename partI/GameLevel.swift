@@ -1,5 +1,5 @@
 //
-//  TutorialLevel1.swift
+//  GameLevel.swift
 //
 //  Part of the SceneKit Tutorial Series: From Zero to Hero at:
 //  http://www.rogerboesch.com:2368/scenekit-tutorial-series-from-zero-to-hero/
@@ -20,7 +20,7 @@ import SceneKit
 
 // -----------------------------------------------------------------------------
 
-class TutorialLevel1: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
+class GameLevel: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     private let levelWidth = 320
     private let levelLength = 320
     

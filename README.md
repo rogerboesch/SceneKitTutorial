@@ -15,3 +15,9 @@ It's not for the absolute beginner or novice, because I assume things like Swift
 
 ### Introduction
 It's important for me to start directly with a good and solid base which can be used for real Games later. So please don't create a project using the Xcode Project wizard but start directly with the Source on GitHub. Also I don't want to build a step by step tutorial which shows each line, but always cover a chapter of the Game and introduce a new component and show how and why :)
+
+
+### Screenshots
+
+![Screenshot 1](/screenshots/screenshot1.png)
+![Screenshot 2](/screenshots/screenshot2.png)

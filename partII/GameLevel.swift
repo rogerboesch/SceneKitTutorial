@@ -1,5 +1,5 @@
 //
-//  TutorialLevel2.swift
+//  GameLevel.swift
 //
 //  Part of the SceneKit Tutorial Series: From Zero to Hero at:
 //  http://www.rogerboesch.com:2368/scenekit-tutorial-series-from-zero-to-hero/
@@ -20,12 +20,12 @@ import SceneKit
 
 // -----------------------------------------------------------------------------
 
-class TutorialLevel2: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
+class GameLevel: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     private let levelWidth = 320
     private let levelLength = 320
     
     private var _terrain: RBTerrain?
-    private var _player: PlayerTutorial2?
+    private var _player: Player?
     
     // -------------------------------------------------------------------------
     // MARK: - Input handling
@@ -44,7 +44,7 @@ class TutorialLevel2: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDeleg
     // MARK: - Place objects
     
     private func addPlayer() {
-        _player = PlayerTutorial2()
+        _player = Player()
         _player!.position = SCNVector3(160, 3, 0)
         self.rootNode.addChildNode(_player!)
         
