@@ -6,7 +6,7 @@ https://rogerboesch.github.io/scenekit/tutorial/games/2016/07/15/scenekit-zeroto
 https://rogerboesch.github.io/scenekit/tutorial/games/2016/10/26/scenekit-zerotohero-II.html
 https://rogerboesch.github.io/scenekit/tutorial/games/2017/12/23/scenekit-zerotohero-III.html
 
-Remark: Code now updated to be Swift 4 compliant
+Remark: **Code now updated to be Swift 4 compliant**
 
 
 ### The Game
@@ -21,20 +21,20 @@ It's important for me to start directly with a good and solid base which can be 
 
 ### Screenshots
 
-Part I
+Tutorial Part I
 ![Screenshot Part I](/screenshots/screenshot1.png)
 
-Part II
+Tutorial Part II
 ![Screenshot Part II](/screenshots/screenshot2.png)
 
-Part III
+Tutorial Part III
 ![Screenshot Part III](/screenshots/screenshot3.png)
 
 
 **Important**:
 *Feel free to use this code in every way you want, but please consider also
-to give esomething back to the community.
+to give esomething back to the community.*
 
-I don't own the license rights for the assets used in this tutorials,
+*I don't own the license rights for the assets used in this tutorials,
 so before you use them for something else then self-learning, please check by yourself the license behind
 or even better replace it with your own art. Thank you!*
