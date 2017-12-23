@@ -1,7 +1,7 @@
 //
 //  Player.swift
 //
-//  Part II of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part III of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/07/16.
@@ -13,13 +13,23 @@ import SceneKit
 // -----------------------------------------------------------------------------
 
 class Player : SCNNode {
+    public static let moveOffset: CGFloat = 10
+    
     private let lookAtForwardPosition = SCNVector3Make(0.0, -1.0, 6.0)
-    private let cameraFowardPosition = SCNVector3(x: 5, y: 1.0, z: -5)
+    private let cameraFowardPosition = SCNVector3(x: 0, y: 1.0, z: -5)
 
     private var _lookAtNode: SCNNode?
     private var _cameraNode: SCNNode?
     private var _playerNode: SCNNode?
 
+    // -------------------------------------------------------------------------
+    // MARK: - Effects
+
+    func roll() {
+        // Part III: An easy effect we use, whenever we fly trough a ring
+        let rotateAction = SCNAction.rotateBy(x: 0, y: 0, z: -degreesToRadians(value: 360.0), duration: 0.5)
+        _playerNode!.runAction(rotateAction)
+    }
 
     // -------------------------------------------------------------------------
     // MARK: - Camera adjustment
@@ -28,10 +38,10 @@ class Player : SCNNode {
         var position = _cameraNode!.position
 
         if position.x < 0 {
-            position.x = 5.0
+            position.x = 0.5
         }
         else {
-            position.x = -5.0
+            position.x = -0.5
         }
     
         SCNTransaction.begin()
@@ -46,7 +56,7 @@ class Player : SCNNode {
     // MARK: - Plane movements
     
     func moveLeft() {
-        let moveAction = SCNAction.moveBy(x: 2.0, y: 0.0, z: 0, duration: 0.5)
+        let moveAction = SCNAction.moveBy(x: Player.moveOffset, y: 0.0, z: 0, duration: 0.5)
         self.runAction(moveAction, forKey: "moveLeftRight")
 
         let rotateAction1 = SCNAction.rotateBy(x: 0, y: 0, z: -degreesToRadians(value: 15.0), duration: 0.25)
@@ -60,7 +70,7 @@ class Player : SCNNode {
     // -------------------------------------------------------------------------
     
     func moveRight() {
-        let moveAction = SCNAction.moveBy(x: -2.0, y: 0.0, z: 0, duration: 0.5)
+        let moveAction = SCNAction.moveBy(x: -Player.moveOffset, y: 0.0, z: 0, duration: 0.5)
         self.runAction(moveAction, forKey: "moveLeftRight")
         
         let rotateAction1 = SCNAction.rotateBy(x: 0, y: 0, z: degreesToRadians(value: 15.0), duration: 0.25)
@@ -84,6 +94,8 @@ class Player : SCNNode {
         }
         
         _playerNode = scene!.rootNode.childNode(withName: "ship", recursively: true)
+        _playerNode?.name = "player"
+        
         if (_playerNode == nil) {
             fatalError("Ship node not found")
         }
@@ -91,7 +103,21 @@ class Player : SCNNode {
         _playerNode!.scale = SCNVector3(x: 0.25, y: 0.25, z: 0.25)
         self.addChildNode(_playerNode!)
         
-        // Look at Node
+        // Contact box
+        // Part III: Instead of use the plane itself we add a collision node to the player object
+        let boxMaterial = SCNMaterial()
+        boxMaterial.diffuse.contents = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.0)
+        
+        let box = SCNBox(width: 2.0, height: 1.0, length: 1.0, chamferRadius: 0.0)
+        box.materials = [boxMaterial]
+        let contactBox = SCNNode(geometry: box)
+        contactBox.name = "player"
+        contactBox.physicsBody = SCNPhysicsBody(type: .kinematic, shape: nil)
+        contactBox.physicsBody?.categoryBitMask = Game.Physics.Categories.player
+        contactBox.physicsBody!.contactTestBitMask = Game.Physics.Categories.ring
+        self.addChildNode(contactBox)
+
+            // Look at Node
         _lookAtNode = SCNNode()
         _lookAtNode!.position = lookAtForwardPosition
         addChildNode(_lookAtNode!)
@@ -121,7 +147,7 @@ class Player : SCNNode {
         spotLightNode.position = SCNVector3(x: 1.0, y: 5.0, z: -2.0)
         self.addChildNode(spotLightNode)
         
-        // Linnk it
+        // Link it
         let constraint2 = SCNLookAtConstraint(target: self)
         constraint2.isGimbalLockEnabled = true
         spotLightNode.constraints = [constraint2]

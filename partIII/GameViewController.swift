@@ -1,7 +1,7 @@
 //
 //  GameViewController.swift
 //
-//  Part II of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part III of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/07/16.
@@ -30,6 +30,17 @@ class GameViewController: UIViewController {
    
     // -------------------------------------------------------------------------
     // MARK: - ViewController life cycle
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Part III: HUD is created and assigned to view and game level
+        let hud = HUD(size: self.view.bounds.size)
+        _level.hud = hud
+        _sceneView.overlaySKScene = hud.scene
+    }
+
+    // -------------------------------------------------------------------------
 
     override func viewDidLoad() {
         super.viewDidLoad()

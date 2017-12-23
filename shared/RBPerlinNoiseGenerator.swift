@@ -1,15 +1,9 @@
 //
 //  RBPerlinNoiseGenerator.swift
+//  Perlin noise generator (used for terrain class)
 //
 //  Created by Roger Boesch on 12/07/16.
 //  Based on Obj-C code created by Steven Troughton-Smith on 24/12/11.
-//
-//  Feel free to use this code in every way you want, but please consider also
-//  to give esomething back to the community.
-//
-//  I don't own the license rights for the assets used in this tutorials
-//  So before you use for something else then self-learning, please check by yourself the license behind
-//  or even better replace it with your own art. Thank you!
 //
 
 import UIKit

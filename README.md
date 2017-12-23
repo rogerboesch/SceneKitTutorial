@@ -22,3 +22,13 @@ It's important for me to start directly with a good and solid base which can be 
 
 ![Screenshot 1](/screenshots/screenshot1.png)
 ![Screenshot 2](/screenshots/screenshot2.png)
+![Screenshot 3](/screenshots/screenshot3.png)
+
+
+**Important**:
+*Feel free to use this code in every way you want, but please consider also
+to give esomething back to the community.
+
+I don't own the license rights for the assets used in this tutorials,
+so before you use them for something else then self-learning, please check by yourself the license behind
+or even better replace it with your own art. Thank you!*

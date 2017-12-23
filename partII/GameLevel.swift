@@ -1,18 +1,11 @@
 //
 //  GameLevel.swift
 //
-//  Part of the SceneKit Tutorial Series: From Zero to Hero at:
-//  http://www.rogerboesch.com:2368/scenekit-tutorial-series-from-zero-to-hero/
+//  Part II of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/10/16.
 //  Copyright © 2016 Roger Boesch. All rights reserved.
-//
-//  Feel free to use this code in every way you want, but please consider also
-//  to give esomething back to the community.
-//
-//  I don't own the license rights for the assets used in this tutorials
-//  So before you use for something else then self-learning, please check by yourself the license behind
-//  or even better replace it with your own art. Thank you!
 //
 
 import UIKit
