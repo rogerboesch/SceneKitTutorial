@@ -29,12 +29,12 @@ class Ring : SCNNode {
         ringMaterial.diffuse.wrapT = .repeat
         ringMaterial.diffuse.contentsTransform = SCNMatrix4MakeScale(3, 1, 1)
 
-        let ring = SCNTorus(ringRadius: 5.0, pipeRadius: 0.5);
+        let ring = SCNTorus(ringRadius: 5.0, pipeRadius: 0.5)
         ring.materials = [ringMaterial]
         let ringNode = SCNNode(geometry: ring)
         self.addChildNode(ringNode)
 
-        ringNode.eulerAngles = SCNVector3(degreesToRadians(value: 90), 0, 0);
+        ringNode.eulerAngles = SCNVector3(degreesToRadians(value: 90), 0, 0)
         
         let action = SCNAction.rotateBy(x: 0, y: 0, z: degreesToRadians(value: 360), duration: 3.0)
         ringNode.runAction(SCNAction.repeatForever(action))
