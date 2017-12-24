@@ -8,7 +8,7 @@ The code is part of my SceneKit Tutorial Series: From Zero to Hero.
 - *Part 4 - Implement good gameplay*
 - *Part 5 - Build a real level*
 - *Part 6 - Finish the game*
-- *Part 7 - ARKit: Play in your environment *
+- *Part 7 - ARKit: Play in your environment*
 
 Remark: **Code now updated to be Swift 4 compliant**
 
