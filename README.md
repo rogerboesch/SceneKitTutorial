@@ -18,7 +18,7 @@ This tutorial is a companion work I do parallel on the development of my next up
 
 ### For who is this Tutorial?
 It's not for the absolute beginner or novice, because I assume things like Swift notation, trigonometric know-how etc.
-On the other hand you don't have to learn all at the begin. Like the terrain class ··RBTerrain··.
+On the other hand you don't have to learn all at the begin. Like the terrain class **RBTerrain**.
 You can use it just like it is and read the code later again when you have more know-how.
 The most important is that you understand the principles.
 
