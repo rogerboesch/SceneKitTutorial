@@ -5,7 +5,7 @@ The code is part of my SceneKit Tutorial Series: From Zero to Hero.
 - **[Part 1 - Building a Terrain](https://rogerboesch.github.io/scenekit/tutorial/games/2016/07/15/scenekit-zerotohero-I.html)**
 - **[Part 2 - Create a real player game object](https://rogerboesch.github.io/scenekit/tutorial/games/2016/10/26/scenekit-zerotohero-II.html)**
 - **[Part 3 - Add life to your terrain](https://rogerboesch.github.io/scenekit/tutorial/games/2017/12/23/scenekit-zerotohero-III.html)**
-- *Part 4 - Implement good gameplay*
+- **[Part 4 - Implement the gameLoop](https://rogerboesch.github.io/scenekit/tutorial/games/2017/12/26/scenekit-zerotohero-IV.html)**
 - *Part 5 - Build a real level*
 - *Part 6 - Finish the game*
 - *Part 7 - ARKit: Play in your environment*

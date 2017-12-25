@@ -101,7 +101,7 @@ class Player : SCNNode {
         _cameraNode!.camera = SCNCamera()
         _cameraNode!.position = cameraFowardPosition
         _cameraNode!.camera!.zNear = 0.1
-        _cameraNode!.camera!.zFar = 50
+        _cameraNode!.camera!.zFar = 200
         self.addChildNode(_cameraNode!)
         
         // Link them

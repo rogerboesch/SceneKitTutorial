@@ -7,12 +7,14 @@
 //  Created by Roger Boesch on 12/07/16.
 //  Copyright © 2016 Roger Boesch. All rights reserved.
 //
+//  Part IV: Now the ring objects it's derrived from GameObject instead of SCNNode
+//
 
 import SceneKit
 
 // -----------------------------------------------------------------------------
 
-class Player : SCNNode {
+class Player : GameObject {
     public static let moveOffset: CGFloat = 10
     
     private let lookAtForwardPosition = SCNVector3Make(0.0, -1.0, 6.0)
@@ -21,9 +23,54 @@ class Player : SCNNode {
     private var _lookAtNode: SCNNode?
     private var _cameraNode: SCNNode?
     private var _playerNode: SCNNode?
+    
+    // -------------------------------------------------------------------------
+    // MARK: - Propertiues
+    
+    override var description: String {
+        get {
+            return "player \(self.id)"
+        }
+    }
+
+    // -------------------------------------------------------------------------
+    // MARK: - Collision handling
+    
+    override func collision(with object: GameObject, level: GameLevel) {
+        if let ring = object as? Ring {
+            if ring.state != .alive {
+                return
+            }
+            
+            level.flyTrough(ring)
+            ring.hit()
+            
+            self.roll()
+        }
+        else if let handicap = object as? Handicap {
+            level.touchedHandicap(handicap)
+            handicap.hit()
+            
+            self.die()
+        }
+    }
 
     // -------------------------------------------------------------------------
     // MARK: - Effects
+
+    func die() {
+        if self.state != .alive {
+            return
+        }
+        
+        self.state = .died
+        _playerNode?.isHidden = true
+        
+        self.removeAllActions()
+        _playerNode?.removeAllActions()
+    }
+
+    // -------------------------------------------------------------------------
 
     func roll() {
         // Part III: An easy effect we use, whenever we fly trough a ring
@@ -114,7 +161,7 @@ class Player : SCNNode {
         contactBox.name = "player"
         contactBox.physicsBody = SCNPhysicsBody(type: .kinematic, shape: nil)
         contactBox.physicsBody?.categoryBitMask = Game.Physics.Categories.player
-        contactBox.physicsBody!.contactTestBitMask = Game.Physics.Categories.ring
+        contactBox.physicsBody!.contactTestBitMask = Game.Physics.Categories.ring | Game.Physics.Categories.enemy
         self.addChildNode(contactBox)
 
             // Look at Node
