@@ -6,7 +6,7 @@ The code is part of my SceneKit Tutorial Series: From Zero to Hero.
 - **[Part 2 - Create a real player game object](https://rogerboesch.github.io/scenekit/tutorial/games/2016/10/26/scenekit-zerotohero-II.html)**
 - **[Part 3 - Add life to your terrain](https://rogerboesch.github.io/scenekit/tutorial/games/2017/12/23/scenekit-zerotohero-III.html)**
 - **[Part 4 - Implement a Game Loop](https://rogerboesch.github.io/scenekit/tutorial/games/2017/12/26/scenekit-zerotohero-IV.html)**
-- *Part 5 - Build a real level*
+- *Part 5 - Fly smoothly with CoreMotion*
 - *Part 6 - Finish the game*
 - *Part 7 - ARKit: Play in your environment*
 
