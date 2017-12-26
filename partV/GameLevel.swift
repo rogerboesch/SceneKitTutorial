@@ -64,6 +64,43 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
             _state = value
         }
     }
+    
+    // -------------------------------------------------------------------------
+    // MARK: - New in part V: Motion handling
+    
+    func motionMoveUp() {
+        _player!.moveUp()
+    }
+    
+    // -------------------------------------------------------------------------
+    
+    func motionMoveDown() {
+        _player!.moveDown()
+    }
+    
+    // -------------------------------------------------------------------------
+    
+    func motionStopMovingUpDown() {
+        _player!.stopMovingUpDown()
+    }
+    
+    // -------------------------------------------------------------------------
+    
+    func motionMoveLeft() {
+        _player!.moveLeft()
+    }
+    
+    // -------------------------------------------------------------------------
+    
+    func motionMoveRight() {
+        _player!.moveRight()
+    }
+    
+    // -------------------------------------------------------------------------
+    
+    func motionStopMovingLeftRight() {
+        _player!.stopMovingLeftRight()
+    }
 
     // -------------------------------------------------------------------------
     // MARK: - Input handling
@@ -73,11 +110,23 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
     }
 
     // -------------------------------------------------------------------------
-
+    
     func swipeRight() {
         _player!.moveRight()
     }
+
+    // -------------------------------------------------------------------------
     
+    func swipeDown() {
+        _player!.moveDown()
+    }
+
+    // -------------------------------------------------------------------------
+    
+    func swipeUp() {
+        _player!.moveUp()
+    }
+
     // -------------------------------------------------------------------------
     // MARK: - Actions
     
@@ -133,6 +182,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
             }
 
             self.state = .win
+            _player!.stop()
         }
     }
 
@@ -155,18 +205,20 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
         let space = levelLength / (_numberOfRings+1)
         
         for i in 1..._numberOfRings {
-            let ring = Ring()
+            let ring = Ring(number: i)
             
             var x: CGFloat = 160
             let rnd = RBRandom.integer(1, 3)
             if rnd == 1 {
-                x = x - Game.Player.moveOffset
+                x = x - Game.Objects.offset
             }
             else if rnd == 3 {
-                x = x + Game.Player.moveOffset
+                x = x + Game.Objects.offset
             }
-            
-            ring.position = SCNVector3(Int(x), 3, (i*space))
+
+            let height = RBRandom.integer(8, 20)
+
+            ring.position = SCNVector3(Int(x), height, (i*space))
             self.rootNode.addChildNode(ring)
             
             _gameObjects.append(ring)
@@ -194,16 +246,16 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
             let rnd = RBRandom.integer(1, 3)
             
             if rnd == 1 {
-                x = x - Game.Player.moveOffset
+                x = x - Game.Objects.offset
                 
                 addHandicap(x: x-RBRandom.cgFloat(10, 50), z: CGFloat(i)*space + space/2.0)
-                addHandicap(x: x+Game.Player.moveOffset+RBRandom.cgFloat(10, 50), z: CGFloat(i)*space + space/2.0)
+                addHandicap(x: x+Game.Objects.offset+RBRandom.cgFloat(10, 50), z: CGFloat(i)*space + space/2.0)
             }
             else if rnd == 3 {
-                x = x + Game.Player.moveOffset
+                x = x + Game.Objects.offset
                 
                 addHandicap(x: x+RBRandom.cgFloat(10, 50), z: CGFloat(i)*space + space/2.0)
-                addHandicap(x: x-Game.Player.moveOffset-RBRandom.cgFloat(10, 50), z: CGFloat(i)*space + space/2.0)
+                addHandicap(x: x-Game.Objects.offset-RBRandom.cgFloat(10, 50), z: CGFloat(i)*space + space/2.0)
             }
             
             addHandicap(x: x, z: CGFloat(i)*space + space/2.0)
@@ -237,6 +289,16 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
         _terrain!.position = SCNVector3Make(0, 0, 0)
         self.rootNode.addChildNode(_terrain!)
     }
+
+    // -------------------------------------------------------------------------
+
+    private func addLights() {
+        let ambientLightNode = SCNNode()
+        ambientLightNode.light = SCNLight()
+        ambientLightNode.light!.type = .ambient
+        ambientLightNode.light!.color = UIColor.darkGray
+        self.rootNode.addChildNode(ambientLightNode)
+    }
     
     // -------------------------------------------------------------------------
     // MARK: - Stop
@@ -259,8 +321,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
             self.state = .play
             _hud?.reset()
 
-            let moveAction = SCNAction.moveBy(x: 0, y: 0, z: CGFloat(levelLength)-10, duration: 60)
-            _player!.runAction(moveAction)
+            _player!.start()
         }
     }
 
@@ -271,6 +332,8 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
         // New in part IV: A skybox is used to show a game's background
         self.background.contents = UIImage(named: "art.scnassets/skybox")
 
+        addLights()
+        
         addTerrain()
         addRings()
         addHandicaps()

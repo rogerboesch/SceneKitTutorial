@@ -12,6 +12,11 @@
 
 import SceneKit
 
+// New in part V: We control the plane direction
+enum PlayerDirection {
+    case none, down, left, up, right
+}
+
 // -----------------------------------------------------------------------------
 
 class Player : GameObject {
@@ -21,7 +26,11 @@ class Player : GameObject {
     private var _lookAtNode: SCNNode?
     private var _cameraNode: SCNNode?
     private var _playerNode: SCNNode?
-    
+
+    // New in part V: We control the plane direction
+    private var _upDownDirection: PlayerDirection = .none       // Vertical direction
+    private var _leftRightDirection: PlayerDirection = .none    // Side direction
+
     // -------------------------------------------------------------------------
     // MARK: - Propertiues
     
@@ -32,9 +41,60 @@ class Player : GameObject {
     }
 
     // -------------------------------------------------------------------------
+    // MARK: - Game loop
+    
+    override func update(atTime time: TimeInterval, level: GameLevel) {
+        var eulerX: CGFloat = 0
+        var eulerZ: CGFloat = 0
+
+        // New in part V: We control minimum/maximum height
+        if (_upDownDirection == .down) {
+            if (self.position.y <= Game.Player.minimumHeight) {
+                stopMovingUpDown()
+            }
+
+            eulerX = degreesToRadians(value: Game.Player.upDownAngle)
+        }
+        else if (_upDownDirection == .up) {
+            if (self.position.y >= Game.Player.maximumHeight) {
+                stopMovingUpDown()
+            }
+
+            eulerX = -degreesToRadians(value: Game.Player.upDownAngle)
+        }
+        
+        // New in part V: We control minimum/maximum left/right
+        if (_leftRightDirection == .left) {
+            if (self.position.x >= Game.Player.maximumLeft) {
+                stopMovingLeftRight()
+            }
+            
+            eulerZ = -degreesToRadians(value: Game.Player.leftRightAngle)
+        }
+        else if (_leftRightDirection == .right) {
+            if (self.position.x <= Game.Player.maximumRight) {
+                stopMovingLeftRight()
+            }
+
+            eulerZ = degreesToRadians(value: Game.Player.leftRightAngle)
+        }
+
+        SCNTransaction.begin()
+        SCNTransaction.animationDuration = 1.0
+        
+        _playerNode?.eulerAngles = SCNVector3(eulerX, 0, eulerZ)
+
+        SCNTransaction.commit()
+    }
+
+    // -------------------------------------------------------------------------
     // MARK: - Collision handling
     
     override func collision(with object: GameObject, level: GameLevel) {
+        if self.state != .alive {
+            return
+        }
+
         if let ring = object as? Ring {
             if ring.state != .alive {
                 return
@@ -42,8 +102,6 @@ class Player : GameObject {
             
             level.flyTrough(ring)
             ring.hit()
-            
-            self.roll()
         }
         else if let handicap = object as? Handicap {
             level.touchedHandicap(handicap)
@@ -69,26 +127,161 @@ class Player : GameObject {
     }
 
     // -------------------------------------------------------------------------
+    // MARK: - Camera adjustment
 
-    func roll() {
-        // Part III: An easy effect we use, whenever we fly trough a ring
-        let rotateAction = SCNAction.rotateBy(x: 0, y: 0, z: -degreesToRadians(value: 360.0), duration: 0.5)
-        _playerNode!.runAction(rotateAction)
+    private func adjustCamera() {
+        // New in part V: move the camera according to the fly direction
+        var position = _cameraNode!.position
+        
+        if (_leftRightDirection == .left) {
+            position.x = 1.0
+        }
+        else if (_leftRightDirection == .right) {
+            position.x = -1.0
+        }
+        else if (_leftRightDirection == .none) {
+            position.x = 0.1
+        }
+        
+        SCNTransaction.begin()
+        SCNTransaction.animationDuration = 1.0
+        
+        _cameraNode?.position = position
+        
+        SCNTransaction.commit()
+    }
+    
+    // -------------------------------------------------------------------------
+    // MARK: - New in part V: Move Actions
+    
+    func moveUp() {
+        let oldDirection = _upDownDirection
+        
+        if _upDownDirection == .none {
+            let moveAction = SCNAction.moveBy(x: 0, y: Game.Player.upDownMoveDistance, z: 0, duration: 0.5)
+            self.runAction(SCNAction.repeatForever(moveAction), forKey: "upDownDirection")
+            
+            _upDownDirection = .up
+        }
+        else if (_upDownDirection == .down) {
+            self.removeAction(forKey: "upDownDirection")
+            
+            _upDownDirection = .none
+        }
+
+        if oldDirection != _upDownDirection {
+            adjustCamera()
+        }
+    }
+    
+    // -------------------------------------------------------------------------
+    
+    func moveDown() {
+        let oldDirection = _upDownDirection
+        
+        if _upDownDirection == .none {
+            let moveAction = SCNAction.moveBy(x: 0, y: -Game.Player.upDownMoveDistance, z: 0, duration: 0.5)
+            self.runAction(SCNAction.repeatForever(moveAction), forKey: "upDownDirection")
+            
+            _upDownDirection = .down
+        }
+        else if (_upDownDirection == .up) {
+            self.removeAction(forKey: "upDownDirection")
+            
+            _upDownDirection = .none
+        }
+
+        if oldDirection != _upDownDirection {
+            adjustCamera()
+        }
+    }
+    
+    // -------------------------------------------------------------------------
+    
+    func stopMovingUpDown() {
+        let oldDirection = _upDownDirection
+        
+        self.removeAction(forKey: "upDownDirection")
+        _upDownDirection = .none
+
+        if oldDirection != _upDownDirection {
+            adjustCamera()
+        }
+    }
+    
+    // -------------------------------------------------------------------------
+    
+    func moveLeft() {
+        let oldDirection = _leftRightDirection
+        
+        if _leftRightDirection == .none {
+            let moveAction = SCNAction.moveBy(x: Game.Player.leftRightMoveDistance, y: 0.0, z: 0, duration: 0.5)
+            self.runAction(SCNAction.repeatForever(moveAction), forKey: "leftRightDirection")
+            
+            _leftRightDirection = .left
+        }
+        else if (_leftRightDirection == .right) {
+            self.removeAction(forKey: "leftRightDirection")
+            
+            _leftRightDirection = .none
+        }
+
+        if oldDirection != _leftRightDirection {
+            adjustCamera()
+        }
+    }
+    
+    // -------------------------------------------------------------------------
+    
+    func moveRight() {
+        let oldDirection = _leftRightDirection
+        
+        if _leftRightDirection == .none {
+            let moveAction = SCNAction.moveBy(x: -Game.Player.leftRightMoveDistance, y: 0.0, z: 0, duration: 0.5)
+            self.runAction(SCNAction.repeatForever(moveAction), forKey: "leftRightDirection")
+            
+            _leftRightDirection = .right
+        }
+        else if (_leftRightDirection == .left) {
+            self.removeAction(forKey: "leftRightDirection")
+            
+            _leftRightDirection = .none
+        }
+
+        if oldDirection != _leftRightDirection {
+            adjustCamera()
+        }
+    }
+    
+    // -------------------------------------------------------------------------
+    
+    func stopMovingLeftRight() {
+        let oldDirection = _leftRightDirection
+        
+        self.removeAction(forKey: "leftRightDirection")
+        _leftRightDirection = .none
+
+        if oldDirection != _leftRightDirection {
+            adjustCamera()
+        }
     }
 
     // -------------------------------------------------------------------------
-    // MARK: - Camera adjustment
 
-    private func toggleCamera() {
+    func start() {
+        let moveAction = SCNAction.moveBy(x: 0, y: 0, z: Game.Player.speedDistance, duration: Game.Player.actionTime)
+        let action = SCNAction.repeatForever(moveAction)
+        self.runAction(action, forKey: "fly")
+    }
+
+    // -------------------------------------------------------------------------
+
+    override func stop() {
+        super.stop()
+
         var position = _cameraNode!.position
-
-        if position.x < 0 {
-            position.x = 0.5
-        }
-        else {
-            position.x = -0.5
-        }
-    
+        position.x = 0.0
+        
         SCNTransaction.begin()
         SCNTransaction.animationDuration = 1.0
         
@@ -97,35 +290,6 @@ class Player : GameObject {
         SCNTransaction.commit()
     }
 
-    // -------------------------------------------------------------------------
-    // MARK: - Plane movements
-    
-    func moveLeft() {
-        let moveAction = SCNAction.moveBy(x: Game.Player.moveOffset, y: 0.0, z: 0, duration: 0.5)
-        self.runAction(moveAction, forKey: "moveLeftRight")
-
-        let rotateAction1 = SCNAction.rotateBy(x: 0, y: 0, z: -degreesToRadians(value: 15.0), duration: 0.25)
-        let rotateAction2 = SCNAction.rotateBy(x: 0, y: 0, z: degreesToRadians(value: 15.0), duration: 0.25)
-
-        _playerNode!.runAction(SCNAction.sequence([rotateAction1, rotateAction2]))
-        
-        toggleCamera()
-    }
-    
-    // -------------------------------------------------------------------------
-    
-    func moveRight() {
-        let moveAction = SCNAction.moveBy(x: -Game.Player.moveOffset, y: 0.0, z: 0, duration: 0.5)
-        self.runAction(moveAction, forKey: "moveLeftRight")
-        
-        let rotateAction1 = SCNAction.rotateBy(x: 0, y: 0, z: degreesToRadians(value: 15.0), duration: 0.25)
-        let rotateAction2 = SCNAction.rotateBy(x: 0, y: 0, z: -degreesToRadians(value: 15.0), duration: 0.25)
-        
-        _playerNode!.runAction(SCNAction.sequence([rotateAction1, rotateAction2]))
- 
-        toggleCamera()
-    }
-    
     // -------------------------------------------------------------------------
     // MARK: - Initialisation
     
@@ -172,7 +336,7 @@ class Player : GameObject {
         _cameraNode!.camera = SCNCamera()
         _cameraNode!.position = cameraFowardPosition
         _cameraNode!.camera!.zNear = 0.1
-        _cameraNode!.camera!.zFar = 200
+        _cameraNode!.camera!.zFar = 600
         self.addChildNode(_cameraNode!)
         
         // Link them
@@ -189,7 +353,7 @@ class Player : GameObject {
         spotLight.color = UIColor.white
         let spotLightNode = SCNNode()
         spotLightNode.light = spotLight
-        spotLightNode.position = SCNVector3(x: 1.0, y: 5.0, z: -2.0)
+        spotLightNode.position = SCNVector3(x: 1.0, y: 15.0, z: -2.0)
         self.addChildNode(spotLightNode)
         
         // Link it

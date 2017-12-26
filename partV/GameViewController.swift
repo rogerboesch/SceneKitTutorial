@@ -11,12 +11,19 @@
 import UIKit
 import SceneKit
 import SpriteKit
+import CoreMotion
+import GameController
 
 class GameViewController: UIViewController, SCNSceneRendererDelegate {
     private var _sceneView: SCNView!
     private var _level: GameLevel!
     private var _hud: HUD!
-    
+
+    // New in part V: Use CorMotion to fly the plane
+    private var _motionManager = CMMotionManager()
+    private var _attitude: CMAttitude?                  // Current attitude
+    private var _startAttitude: CMAttitude?             // Start attitude
+
     // -------------------------------------------------------------------------
     // MARK: - Properties
 
@@ -67,6 +74,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
         }
         // New in part V: A tap is used to start the level (see tutorial)
         else if _level.state == .ready {
+            _startAttitude = _attitude
             _level.start()
         }
     }
@@ -79,6 +87,64 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
         }
         else if (gestureRecognize.direction == .right) {
             _level!.swipeRight()
+        }
+        else if (gestureRecognize.direction == .down) {
+            _level!.swipeDown()
+        }
+        else if (gestureRecognize.direction == .up) {
+            _level!.swipeUp()
+        }
+    }
+    
+    // -------------------------------------------------------------------------
+    // MARK: - Motion handling
+    
+    private func motionDidChange(data: CMDeviceMotion) {
+        _attitude = data.attitude
+
+        if _level == nil {
+            return
+        }
+            
+        if (_level.state != .play) {
+            return
+        }
+        
+        // Up/Down
+        let diff1 = _startAttitude!.roll - _attitude!.roll
+        
+        if (diff1 > 0.2) {
+            _level!.motionMoveUp()
+        }
+        else if (diff1 < -0.2) {
+            _level!.motionMoveDown()
+        }
+        else {
+            _level!.motionStopMovingUpDown()
+        }
+        
+        let diff2 = _startAttitude!.pitch - _attitude!.pitch
+        
+        if (diff2 > 0.2) {
+            _level!.motionMoveLeft()
+        }
+        else if (diff2 < -0.2) {
+            _level!.motionMoveRight()
+        }
+        else {
+            _level!.motionStopMovingLeftRight()
+        }
+    }
+
+    // -------------------------------------------------------------------------
+
+    private func setupMotionHandler() {
+        if (GCController.controllers().count == 0 && _motionManager.isAccelerometerAvailable) {
+            _motionManager.accelerometerUpdateInterval = 1/60.0
+            
+            _motionManager.startDeviceMotionUpdates(to: OperationQueue.main, withHandler: {(data, error) in
+                self.motionDidChange(data: data!)
+            })
         }
     }
 
@@ -112,7 +178,9 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
         _sceneView.delegate = self
 
         self.view = _sceneView
-        
+
+        setupMotionHandler()
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         _sceneView!.addGestureRecognizer(tapGesture)
         
@@ -123,6 +191,14 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
         let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
         swipeRightGesture.direction = .right
         _sceneView!.addGestureRecognizer(swipeRightGesture)
+
+        let swipeDownGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+        swipeDownGesture.direction = .down
+        _sceneView!.addGestureRecognizer(swipeDownGesture)
+
+        let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+        swipeUpGesture.direction = .up
+        _sceneView!.addGestureRecognizer(swipeUpGesture)
     }
 
     // -------------------------------------------------------------------------
