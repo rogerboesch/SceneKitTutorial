@@ -15,8 +15,6 @@ import SceneKit
 // -----------------------------------------------------------------------------
 
 class Player : GameObject {
-    public static let moveOffset: CGFloat = 10
-    
     private let lookAtForwardPosition = SCNVector3Make(0.0, -1.0, 6.0)
     private let cameraFowardPosition = SCNVector3(x: 0, y: 1.0, z: -5)
 
@@ -103,7 +101,7 @@ class Player : GameObject {
     // MARK: - Plane movements
     
     func moveLeft() {
-        let moveAction = SCNAction.moveBy(x: Player.moveOffset, y: 0.0, z: 0, duration: 0.5)
+        let moveAction = SCNAction.moveBy(x: Game.Player.moveOffset, y: 0.0, z: 0, duration: 0.5)
         self.runAction(moveAction, forKey: "moveLeftRight")
 
         let rotateAction1 = SCNAction.rotateBy(x: 0, y: 0, z: -degreesToRadians(value: 15.0), duration: 0.25)
@@ -117,7 +115,7 @@ class Player : GameObject {
     // -------------------------------------------------------------------------
     
     func moveRight() {
-        let moveAction = SCNAction.moveBy(x: -Player.moveOffset, y: 0.0, z: 0, duration: 0.5)
+        let moveAction = SCNAction.moveBy(x: -Game.Player.moveOffset, y: 0.0, z: 0, duration: 0.5)
         self.runAction(moveAction, forKey: "moveLeftRight")
         
         let rotateAction1 = SCNAction.rotateBy(x: 0, y: 0, z: degreesToRadians(value: 15.0), duration: 0.25)

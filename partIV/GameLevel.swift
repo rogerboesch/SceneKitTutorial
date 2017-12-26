@@ -160,10 +160,10 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
             var x: CGFloat = 160
             let rnd = RBRandom.integer(1, 3)
             if rnd == 1 {
-                x = x - Player.moveOffset
+                x = x - Game.Player.moveOffset
             }
             else if rnd == 3 {
-                x = x + Player.moveOffset
+                x = x + Game.Player.moveOffset
             }
             
             ring.position = SCNVector3(Int(x), 3, (i*space))
@@ -175,26 +175,38 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
 
     // -------------------------------------------------------------------------
 
+    private func addHandicap(x: CGFloat, z: CGFloat) {
+        let handicap = Handicap()
+        handicap.position = SCNVector3(x, handicap.height/2, z)
+        self.rootNode.addChildNode(handicap)
+        
+        _gameObjects.append(handicap)
+    }
+
+    // -------------------------------------------------------------------------
+
     private func addHandicaps() {
         // Part IV: Add handicaps to the game level
         let space: CGFloat = CGFloat(levelLength / (_numberOfRings+1))
         
         for i in 1..._numberOfRings-1 {
-            let handicap = Handicap()
-            
             var x: CGFloat = 160
             let rnd = RBRandom.integer(1, 3)
+            
             if rnd == 1 {
-                x = x - Player.moveOffset
+                x = x - Game.Player.moveOffset
+                
+                addHandicap(x: x-RBRandom.cgFloat(10, 50), z: CGFloat(i)*space + space/2.0)
+                addHandicap(x: x+Game.Player.moveOffset+RBRandom.cgFloat(10, 50), z: CGFloat(i)*space + space/2.0)
             }
             else if rnd == 3 {
-                x = x + Player.moveOffset
+                x = x + Game.Player.moveOffset
+                
+                addHandicap(x: x+RBRandom.cgFloat(10, 50), z: CGFloat(i)*space + space/2.0)
+                addHandicap(x: x-Game.Player.moveOffset-RBRandom.cgFloat(10, 50), z: CGFloat(i)*space + space/2.0)
             }
             
-            handicap.position = SCNVector3(x, 3.0, CGFloat(i)*space + space/2.0)
-            self.rootNode.addChildNode(handicap)
-            
-            _gameObjects.append(handicap)
+            addHandicap(x: x, z: CGFloat(i)*space + space/2.0)
         }
     }
 

@@ -47,8 +47,8 @@ class RBRandom {
     
     // -------------------------------------------------------------------------
     
-    class func float(_ from: SCNFloat, _ to: SCNFloat) -> SCNFloat {
-        return SCNFloat(RBRandom.sharedInstance.integer(Int(from), Int(to)))
+    class func cgFloat(_ from: CGFloat, _ to: CGFloat) -> CGFloat {
+        return CGFloat(RBRandom.sharedInstance.integer(Int(from), Int(to)))
     }
     
     // -------------------------------------------------------------------------

@@ -27,6 +27,7 @@
 		DB55EF241FE3923B00C2E1CC /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55EF231FE3923B00C2E1CC /* GameViewController.swift */; };
 		DB55EF461FE3939400C2E1CC /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DB55EF451FE3939400C2E1CC /* Base.lproj */; };
 		DB55EF471FE393B900C2E1CC /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DB55EF451FE3939400C2E1CC /* Base.lproj */; };
+		DBBE57E81FF200100052F32B /* RB+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBE57E61FF1FF7A0052F32B /* RB+UIColor.swift */; };
 		DBCE995C1FEFA13300DEE81F /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB55EF001FE38FA800C2E1CC /* assets.xcassets */; };
 		DBCE99751FEFAF3B00DEE81F /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DB55EF451FE3939400C2E1CC /* Base.lproj */; };
 		DBCE99761FEFAF3E00DEE81F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DB55EF011FE38FA900C2E1CC /* art.scnassets */; };
@@ -81,6 +82,7 @@
 		DB55EF211FE3914900C2E1CC /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		DB55EF231FE3923B00C2E1CC /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		DB55EF451FE3939400C2E1CC /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
+		DBBE57E61FF1FF7A0052F32B /* RB+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RB+UIColor.swift"; sourceTree = "<group>"; };
 		DBCE99611FEFAF1500DEE81F /* partIV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = partIV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCE99711FEFAF1500DEE81F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBCE997D1FEFAFCA00DEE81F /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				DB55EF0D1FE38FE900C2E1CC /* RBUtility.swift */,
 				DBCE99891FEFB32F00DEE81F /* RB+CGPoint.swift */,
 				DBCE998B1FEFB36F00DEE81F /* RB+SKAction.swift */,
+				DBBE57E61FF1FF7A0052F32B /* RB+UIColor.swift */,
 				DB55EF0B1FE38FE900C2E1CC /* AppDelegate.swift */,
 			);
 			path = shared;
@@ -450,6 +453,7 @@
 				DBCE99841FEFAFCB00DEE81F /* Ring.swift in Sources */,
 				DBCE997B1FEFAF4700DEE81F /* RBUtility.swift in Sources */,
 				DBCE998C1FEFB36F00DEE81F /* RB+SKAction.swift in Sources */,
+				DBBE57E81FF200100052F32B /* RB+UIColor.swift in Sources */,
 				DBCE99851FEFAFCB00DEE81F /* GameLevel.swift in Sources */,
 				DBCE99881FEFAFCB00DEE81F /* HUD.swift in Sources */,
 				DBCE997C1FEFAF4700DEE81F /* AppDelegate.swift in Sources */,

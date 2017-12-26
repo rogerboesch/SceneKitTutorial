@@ -100,7 +100,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
         _sceneView = SCNView()
         _sceneView.scene = _level
         _sceneView.allowsCameraControl = false
-        _sceneView.showsStatistics = true
+        _sceneView.showsStatistics = false
         _sceneView.backgroundColor = UIColor.black
         _sceneView.delegate = self
 

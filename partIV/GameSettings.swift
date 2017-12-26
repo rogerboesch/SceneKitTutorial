@@ -10,11 +10,16 @@
 //  Structs are a very good way to structure the different application settings.
 //  Like that they are easy to read and changeable at one place
 //
+//  New in part IV: Move all constants here
 
-import Foundation
+import UIKit
 
 struct Game {
-    
+
+    struct Player {
+        static let moveOffset: CGFloat = 15
+    }
+
     struct Physics {
         
         // Category bits used for physics handling
