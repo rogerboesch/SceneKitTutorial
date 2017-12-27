@@ -57,10 +57,11 @@ class HUD {
             _missedRings.text = String(format: "%d MISSED", value)
             
             if value > 0 {
+                _missedRings.isHidden = false
                 _missedRings.fontColor = UIColor.red
             }
             else {
-                _missedRings.fontColor = UIColor.white
+                _missedRings.isHidden = true
             }
 
             let scaling: CGFloat = 3
@@ -109,8 +110,8 @@ class HUD {
         _info.text = ""
         _info.isHidden = true
 
-        _rings.text = "0 RINGS"
-        _missedRings.text = "0 MISSED"
+        rings = 0
+        missedRings = 0
     }
 
     // -------------------------------------------------------------------------
