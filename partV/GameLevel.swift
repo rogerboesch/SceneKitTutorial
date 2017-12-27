@@ -22,9 +22,6 @@ enum GameState {
 // -----------------------------------------------------------------------------
 
 class GameLevel: SCNScene, SCNPhysicsContactDelegate {
-    private let levelWidth = 320
-    private let levelLength = 640
-
     // New in part IV: A list of all game objects
     private var _gameObjects = Array<GameObject>()
 
@@ -32,7 +29,6 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
     private var _player: Player?
     private var _hud: HUD?
 
-    private let _numberOfRings = 10
     private var _touchedRings = 0
     
     // New in part IV: We catch now also the number of missed rings
@@ -173,7 +169,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
         }
         
         // Test for end of game
-        if _missedRings + _touchedRings == _numberOfRings {
+        if _missedRings + _touchedRings == Game.Level.numberOfRings {
             if _missedRings < 3 {
                 _hud?.message("YOU WIN", information: "- Touch to restart - ")
             }
@@ -202,12 +198,12 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
 
     private func addRings() {
         // Part III: Add rings to the game level
-        let space = levelLength / (_numberOfRings+1)
+        let space = Int(Game.Level.length-Game.Level.start) / Int(Game.Level.numberOfRings+1)
         
-        for i in 1..._numberOfRings {
+        for i in 1...Game.Level.numberOfRings {
             let ring = Ring(number: i)
             
-            var x: CGFloat = 160
+            var x: CGFloat = Game.Level.width/2
             let rnd = RBRandom.integer(1, 3)
             if rnd == 1 {
                 x = x - Game.Objects.offset
@@ -218,7 +214,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
 
             let height = RBRandom.integer(8, 20)
 
-            ring.position = SCNVector3(Int(x), height, (i*space))
+            ring.position = SCNVector3(Int(x), height, Int(Game.Level.start)+i*space)
             self.rootNode.addChildNode(ring)
             
             _gameObjects.append(ring)
@@ -239,26 +235,26 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
 
     private func addHandicaps() {
         // Part IV: Add handicaps to the game level
-        let space: CGFloat = CGFloat(levelLength / (_numberOfRings+1))
+        let space = CGFloat(Game.Level.length-Game.Level.start) / CGFloat(Game.Level.numberOfRings+1)
         
-        for i in 1..._numberOfRings-1 {
-            var x: CGFloat = 160
+        for i in 1...Game.Level.numberOfRings-1 {
+            var x: CGFloat = Game.Level.width/2
             let rnd = RBRandom.integer(1, 3)
             
             if rnd == 1 {
                 x = x - Game.Objects.offset
                 
-                addHandicap(x: x-RBRandom.cgFloat(10, 50), z: CGFloat(i)*space + space/2.0)
-                addHandicap(x: x+Game.Objects.offset+RBRandom.cgFloat(10, 50), z: CGFloat(i)*space + space/2.0)
+                addHandicap(x: x-RBRandom.cgFloat(10, 50), z: Game.Level.start+CGFloat(i)*space + space/2.0)
+                addHandicap(x: x+Game.Objects.offset+RBRandom.cgFloat(10, 50), z: Game.Level.start+CGFloat(i)*space + space/2.0)
             }
             else if rnd == 3 {
                 x = x + Game.Objects.offset
                 
-                addHandicap(x: x+RBRandom.cgFloat(10, 50), z: CGFloat(i)*space + space/2.0)
-                addHandicap(x: x-Game.Objects.offset-RBRandom.cgFloat(10, 50), z: CGFloat(i)*space + space/2.0)
+                addHandicap(x: x+RBRandom.cgFloat(10, 50), z: Game.Level.start+CGFloat(i)*space + space/2.0)
+                addHandicap(x: x-Game.Objects.offset-RBRandom.cgFloat(10, 50), z: Game.Level.start+CGFloat(i)*space + space/2.0)
             }
             
-            addHandicap(x: x, z: CGFloat(i)*space + space/2.0)
+            addHandicap(x: x, z: Game.Level.start+CGFloat(i)*space + space/2.0)
         }
     }
 
@@ -268,7 +264,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
         _player = Player()
         _player!.state = .alive
         
-        _player!.position = SCNVector3(160, 4, 0)
+        _player!.position = SCNVector3(Game.Level.width/2, 4, Game.Level.start)
         self.rootNode.addChildNode(_player!)
         
         _gameObjects.append(_player!)
@@ -278,7 +274,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
     
     private func addTerrain() {
         // Create terrain
-        _terrain = RBTerrain(width: levelWidth, length: levelLength, scale: 128)
+        _terrain = RBTerrain(width: Int(Game.Level.width), length: Int(Game.Level.length), scale: 96)
         
         let generator = RBPerlinNoiseGenerator(seed: nil)
         _terrain?.formula = {(x: Int32, y: Int32) in
@@ -296,7 +292,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
         let ambientLightNode = SCNNode()
         ambientLightNode.light = SCNLight()
         ambientLightNode.light!.type = .ambient
-        ambientLightNode.light!.color = UIColor.darkGray
+        ambientLightNode.light!.color = UIColor(hex:"#444444")
         self.rootNode.addChildNode(ambientLightNode)
     }
     
@@ -332,6 +328,10 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
         // New in part IV: A skybox is used to show a game's background
         self.background.contents = UIImage(named: "art.scnassets/skybox")
 
+        // New in part V: Add fog effect
+        self.fogStartDistance = Game.Level.Fog.start
+        self.fogEndDistance = Game.Level.Fog.end
+        
         addLights()
         
         addTerrain()

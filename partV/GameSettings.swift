@@ -16,8 +16,21 @@ import UIKit
 
 struct Game {
 
+    struct Level {
+        static let numberOfRings: Int = 10
+        
+        static let width: CGFloat = 320                     // Terrain width
+        static let length: CGFloat = 840                    // Terraiun length
+        static let start: CGFloat = 100                     // Start of player
+
+        struct Fog {
+            static let start: CGFloat = 20                  // Begin of fog
+            static let end: CGFloat = 300                   // ENd of fog
+        }
+    }
+    
     struct Player {
-        static var actionTime: TimeInterval = 10.0          // Time used for move actions
+        static let actionTime: TimeInterval = 10.0          // Time used for move actions
         static let leftRightMoveDistance: CGFloat = 6.0     // Left/Right distance take in time
         static let upDownMoveDistance: CGFloat = 4.0        // Up/Down distance take in time
         static let speedDistance: CGFloat = 100.0           // Forward distance take in time
@@ -43,6 +56,10 @@ struct Game {
             static let ring:   Int = 0b00000010
             static let enemy:  Int = 0b00000100
         }
-        
     }
+
+    struct Motion {
+        static let threshold: Double = 0.2
+    }
+
 }

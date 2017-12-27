@@ -19,10 +19,10 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
     private var _level: GameLevel!
     private var _hud: HUD!
 
-    // New in part V: Use CorMotion to fly the plane
+    // New in part V: Use CoreMotion to fly the plane
     private var _motionManager = CMMotionManager()
-    private var _attitude: CMAttitude?                  // Current attitude
     private var _startAttitude: CMAttitude?             // Start attitude
+    private var _currentAttitude: CMAttitude?           // Current attitude
 
     // -------------------------------------------------------------------------
     // MARK: - Properties
@@ -41,10 +41,9 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
     // MARK: - Render delegate (New in Part IV)
     
     func renderer(_ renderer: SCNSceneRenderer, didSimulatePhysicsAtTime time: TimeInterval) {
-        if _level != nil {
-            _level.update(atTime: time)
-        }
+        guard _level != nil else { return }
 
+        _level.update(atTime: time)
         renderer.loops = true
     }
 
@@ -74,7 +73,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
         }
         // New in part V: A tap is used to start the level (see tutorial)
         else if _level.state == .ready {
-            _startAttitude = _attitude
+            _startAttitude = _currentAttitude
             _level.start()
         }
     }
@@ -82,6 +81,10 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
     // -------------------------------------------------------------------------
 
     @objc private func handleSwipe(_ gestureRecognize: UISwipeGestureRecognizer) {
+        if _level.state != .play {
+            return
+        }
+        
         if (gestureRecognize.direction == .left) {
             _level!.swipeLeft()
         }
@@ -100,35 +103,29 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
     // MARK: - Motion handling
     
     private func motionDidChange(data: CMDeviceMotion) {
-        _attitude = data.attitude
-
-        if _level == nil {
-            return
-        }
-            
-        if (_level.state != .play) {
-            return
-        }
+        guard _level != nil, _level?.state == .play else { return }
+        
+        _currentAttitude = data.attitude
         
         // Up/Down
-        let diff1 = _startAttitude!.roll - _attitude!.roll
+        let diff1 = _startAttitude!.roll - _currentAttitude!.roll
         
-        if (diff1 > 0.2) {
+        if (diff1 >= Game.Motion.threshold) {
             _level!.motionMoveUp()
         }
-        else if (diff1 < -0.2) {
+        else if (diff1 <= -Game.Motion.threshold) {
             _level!.motionMoveDown()
         }
         else {
             _level!.motionStopMovingUpDown()
         }
         
-        let diff2 = _startAttitude!.pitch - _attitude!.pitch
+        let diff2 = _startAttitude!.pitch - _currentAttitude!.pitch
         
-        if (diff2 > 0.2) {
+        if (diff2 >= Game.Motion.threshold) {
             _level!.motionMoveLeft()
         }
-        else if (diff2 < -0.2) {
+        else if (diff2 <= -Game.Motion.threshold) {
             _level!.motionMoveRight()
         }
         else {

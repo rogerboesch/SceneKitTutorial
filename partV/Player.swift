@@ -353,7 +353,7 @@ class Player : GameObject {
         spotLight.color = UIColor.white
         let spotLightNode = SCNNode()
         spotLightNode.light = spotLight
-        spotLightNode.position = SCNVector3(x: 1.0, y: 15.0, z: -2.0)
+        spotLightNode.position = SCNVector3(x: 0.0, y: 25.0, z: -1.0)
         self.addChildNode(spotLightNode)
         
         // Link it
@@ -366,7 +366,7 @@ class Player : GameObject {
         lightNode.light = SCNLight()
         lightNode.light!.type = SCNLight.LightType.omni
         lightNode.light!.color = UIColor.darkGray
-        lightNode.position = SCNVector3(x: 0, y: 10.00, z: -2)
+        lightNode.position = SCNVector3(x: 0, y: 100.00, z: -2)
         self.addChildNode(lightNode)
     }
     
