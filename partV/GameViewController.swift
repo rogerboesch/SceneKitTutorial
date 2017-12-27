@@ -103,10 +103,10 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
     // MARK: - Motion handling
     
     private func motionDidChange(data: CMDeviceMotion) {
-        guard _level != nil, _level?.state == .play else { return }
-        
         _currentAttitude = data.attitude
         
+        guard _level != nil, _level?.state == .play else { return }
+
         // Up/Down
         let diff1 = _startAttitude!.roll - _currentAttitude!.roll
         
