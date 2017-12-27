@@ -79,7 +79,7 @@ class Handicap : GameObject {
             geometry = SCNCylinder(radius: width, height: _height)
         }
         else {
-            geometry = SCNCone(topRadius: 1.0, bottomRadius: width, height: _height)
+            geometry = SCNCone(topRadius: 0.0, bottomRadius: width, height: _height)
         }
         
         geometry.materials = [material]
