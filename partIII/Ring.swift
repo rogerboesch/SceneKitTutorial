@@ -1,7 +1,7 @@
 //
 //  Ring.swift
 //
-//  Part III of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 3 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 13/12/17.

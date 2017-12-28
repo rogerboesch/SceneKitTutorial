@@ -1,7 +1,7 @@
 //
 //  GameSettings.swift
 //
-//  Part V of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 5 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/10/16.

@@ -1,7 +1,7 @@
 //
 //  Player.swift
 //
-//  Part VI of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 6 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/07/16.
@@ -158,7 +158,7 @@ class Player : Plane {
     // MARK: - Camera adjustment
 
     private func adjustCamera() {
-        // New in part V: move the camera according to the fly direction
+        // New in Part 5: move the camera according to the fly direction
         var position = _cameraNode!.position
         
         if (self.leftRightDirection == .left) {
@@ -180,7 +180,7 @@ class Player : Plane {
     }
     
     // -------------------------------------------------------------------------
-    // MARK: - New in part V: Move Actions
+    // MARK: - New in Part 5: Move Actions
     
     override func moveUp() {
         if _crashed {

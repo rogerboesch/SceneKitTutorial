@@ -1,7 +1,7 @@
 //
 //  GameSettings.swift
 //
-//  Part IV of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 4 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/10/16.
@@ -10,7 +10,7 @@
 //  Structs are a very good way to structure the different application settings.
 //  Like that they are easy to read and changeable at one place
 //
-//  New in part IV: Move all constants here
+//  New in Part 4: Move all constants here
 
 import UIKit
 

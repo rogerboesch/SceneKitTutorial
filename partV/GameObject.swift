@@ -1,12 +1,12 @@
 //
 //  GameObject.swift
-//  Part V of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 5 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 31.10.17.
 //  Copyright © 2017 Roger Boesch. All rights reserved.
 //
-//  New in part IV: This is a bigger change. While the game becomes more and more
+//  New in Part 4: This is a bigger change. While the game becomes more and more
 //  various game objects, it's common to encapsulate general things
 //  in a base class.
 //  The most important is the state which is described in detail in the tutorial.

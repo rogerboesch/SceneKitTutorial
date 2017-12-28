@@ -1,5 +1,5 @@
 ### The Blog
-The code is part of my SceneKit Tutorial Serie: From Zero to Hero.
+This code is part of my SceneKit Tutorial Serie: From Zero to Hero.
 
 ![Screenshot Part 6](/screenshots/screenshot0.png)
 

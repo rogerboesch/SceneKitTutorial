@@ -1,13 +1,13 @@
 //
 //  GameLevel.swift
 //
-//  Part IV of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 4 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/10/16.
 //  Copyright © 2016 Roger Boesch. All rights reserved.
 //
-//  New in part IV:
+//  New in Part 4:
 //  The game has become a game loop. A main concept used in any pro game
 //  While you can create SceneKit games without this, it open's some b iug
 //  advantages which are covered in more detail in the tutorial
@@ -25,7 +25,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
     private let levelWidth = 320
     private let levelLength = 640
 
-    // New in part IV: A list of all game objects
+    // New in Part 4: A list of all game objects
     private var _gameObjects = Array<GameObject>()
 
     private var _terrain: RBTerrain?
@@ -35,10 +35,10 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
     private let _numberOfRings = 10
     private var _touchedRings = 0
     
-    // New in part IV: We catch now also the number of missed rings
+    // New in Part 4: We catch now also the number of missed rings
     private var _missedRings = 0
 
-    // New in part IV: The game becomes differenr states
+    // New in Part 4: The game becomes differenr states
     private var _state = GameState.initialized
 
     // -------------------------------------------------------------------------
@@ -98,7 +98,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
     // MARK: - Game loop
     
     func update(atTime time: TimeInterval) {
-        // New in part IV: The game loop (see tutorial)
+        // New in Part 4: The game loop (see tutorial)
         if self.state != .play {
             return
         }
@@ -140,7 +140,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
     // MARK: - Physics delegate
 
     func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
-        // Part IV: Call collision handler of the object (see GameObject)
+        // Part 4: Call collision handler of the object (see GameObject)
         if let gameObjectA = contact.nodeA.parent as? GameObject, let gameObjectB = contact.nodeB.parent as? GameObject {
             gameObjectA.collision(with: gameObjectB, level: self)
             gameObjectB.collision(with: gameObjectA, level: self)
@@ -151,7 +151,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
     // MARK: - Place objects
 
     private func addRings() {
-        // Part III: Add rings to the game level
+        // Part 3: Add rings to the game level
         let space = levelLength / (_numberOfRings+1)
         
         for i in 1..._numberOfRings {
@@ -186,7 +186,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
     // -------------------------------------------------------------------------
 
     private func addHandicaps() {
-        // Part IV: Add handicaps to the game level
+        // Part 4: Add handicaps to the game level
         let space: CGFloat = CGFloat(levelLength / (_numberOfRings+1))
         
         for i in 1..._numberOfRings-1 {
@@ -245,7 +245,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
     // MARK: - Stop
     
     func stop() {
-        // New in part IV: Stop all!
+        // New in Part 4: Stop all!
         for object in _gameObjects {
             object.stop()
         }
@@ -259,7 +259,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
     // MARK: - Initialisation
 
     func create() {
-        // New in part IV: A skybox is used to show a game's background
+        // New in Part 4: A skybox is used to show a game's background
         self.background.contents = UIImage(named: "art.scnassets/skybox")
 
         addTerrain()

@@ -1,18 +1,18 @@
 //
 //  Plane.swift
 //
-//  Part VI of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 6 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/07/16.
 //  Copyright © 2016 Roger Boesch. All rights reserved.
 //
-//  Part VI: Created a base class for planes
+//  Part 6: Created a base class for planes
 //
 
 import SceneKit
 
-// New in part VI: We control the plane direction
+// New in Part 6: We control the plane direction
 enum PlaneDirection {
     case none, down, left, up, right
 }
@@ -116,7 +116,7 @@ class Plane : GameObject {
             eulerY = -degreesToRadians(value: 180)
         }
         
-        // New in part V: We control minimum/maximum height
+        // New in Part 5: We control minimum/maximum height
         if (_upDownDirection == .down) {
             if (self.position.y <= Game.Plane.minimumHeight) {
                 stopMovingUpDown()
@@ -132,7 +132,7 @@ class Plane : GameObject {
             eulerX = -degreesToRadians(value: Game.Plane.upDownAngle)
         }
         
-        // New in part V: We control minimum/maximum left/right
+        // New in Part 5: We control minimum/maximum left/right
         if (_leftRightDirection == .left) {
             if (self.position.x >= Game.Plane.maximumLeft) {
                 stopMovingLeftRight()
@@ -182,7 +182,7 @@ class Plane : GameObject {
     }
     
     // -------------------------------------------------------------------------
-    // MARK: - New in part V: Move Actions
+    // MARK: - New in Part 5: Move Actions
     
     func moveUp() {
         if _upDownDirection == .none {
@@ -291,7 +291,7 @@ class Plane : GameObject {
         self.addChildNode(_modelNode!)
         
         // Contact box
-        // Part III: Instead of use the plane itself we add a collision node to the player object
+        // Part 3: Instead of use the plane itself we add a collision node to the player object
         let boxMaterial = SCNMaterial()
         boxMaterial.diffuse.contents = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.0)
         

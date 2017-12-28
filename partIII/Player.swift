@@ -1,7 +1,7 @@
 //
 //  Player.swift
 //
-//  Part III of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 3 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/07/16.
@@ -26,7 +26,7 @@ class Player : SCNNode {
     // MARK: - Effects
 
     func roll() {
-        // Part III: An easy effect we use, whenever we fly trough a ring
+        // Part 3: An easy effect we use, whenever we fly trough a ring
         let rotateAction = SCNAction.rotateBy(x: 0, y: 0, z: -degreesToRadians(value: 360.0), duration: 0.5)
         _playerNode!.runAction(rotateAction)
     }
@@ -104,7 +104,7 @@ class Player : SCNNode {
         self.addChildNode(_playerNode!)
         
         // Contact box
-        // Part III: Instead of use the plane itself we add a collision node to the player object
+        // Part 3: Instead of use the plane itself we add a collision node to the player object
         let boxMaterial = SCNMaterial()
         boxMaterial.diffuse.contents = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.0)
         

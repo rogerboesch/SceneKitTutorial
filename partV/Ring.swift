@@ -1,7 +1,7 @@
 //
 //  Ring.swift
 //
-//  Part V of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 5 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 13/12/17.
@@ -68,7 +68,7 @@ class Ring : GameObject {
         contactBox.physicsBody?.categoryBitMask = Game.Physics.Categories.ring
         self.addChildNode(contactBox)
         
-        // New in part V: Add a number to the ring
+        // New in Part 5: Add a number to the ring
         let numberMaterial = SCNMaterial()
         numberMaterial.diffuse.contents = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 

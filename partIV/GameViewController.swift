@@ -1,7 +1,7 @@
 //
 //  GameViewController.swift
 //
-//  Part IV of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 4 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/07/16.
@@ -31,7 +31,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
     }
 
     // -------------------------------------------------------------------------
-    // MARK: - Render delegate (New in Part IV)
+    // MARK: - Render delegate (New in Part 4)
     
     func renderer(_ renderer: SCNSceneRenderer, didSimulatePhysicsAtTime time: TimeInterval) {
         if _level != nil {
@@ -45,7 +45,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
     // MARK: - Gesture recognoizers
     
     @objc private func handleTap(_ gestureRecognize: UITapGestureRecognizer) {
-        // New in part IV: A tap is used to restart the level (see tutorial)
+        // New in Part 4: A tap is used to restart the level (see tutorial)
         if _level.state == .loose || _level.state == .win {
             _level.stop()
             _level = nil
@@ -83,7 +83,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Part III: HUD is created and assigned to view and game level
+        // Part 3: HUD is created and assigned to view and game level
         _hud = HUD(size: self.view.bounds.size)
         _level.hud = _hud
         _sceneView.overlaySKScene = _hud.scene

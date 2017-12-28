@@ -1,7 +1,7 @@
 //
 //  GameViewController.swift
 //
-//  Part I of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 1 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/07/16.

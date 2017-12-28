@@ -1,7 +1,7 @@
 //
 //  GameLevel.swift
 //
-//  Part III of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 3 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/10/16.
@@ -20,11 +20,11 @@ class GameLevel: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     private var _terrain: RBTerrain?
     private var _player: Player?
 
-    // Part III: Number od rings and touched rings saved here
+    // Part 3: Number od rings and touched rings saved here
     private let numberOfRings = 10
     private var touchedRings = 0
 
-    // Part III: Reference to the HUD
+    // Part 3: Reference to the HUD
     private var _hud: HUD?
 
     // -------------------------------------------------------------------------
@@ -56,7 +56,7 @@ class GameLevel: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     // MARK: - Physics delegate
 
     func collision(withRing ring: Ring) {
-        // Part III: Collision handling based on physics
+        // Part 3: Collision handling based on physics
         if ring.isHidden {
             return
         }
@@ -74,7 +74,7 @@ class GameLevel: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     // -------------------------------------------------------------------------
 
     func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
-        // Part III: Physics delegate get called when objects collide
+        // Part 3: Physics delegate get called when objects collide
         if let ring = contact.nodeB.parent as? Ring {
             collision(withRing: ring)
         }
@@ -84,7 +84,7 @@ class GameLevel: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
     // MARK: - Place objects
 
     private func addRings() {
-        // Part III: Add rings to the game level
+        // Part 3: Add rings to the game level
         let space = levelLength / (numberOfRings+1)
         
         for i in 1...numberOfRings {

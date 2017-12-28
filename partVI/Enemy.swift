@@ -1,13 +1,13 @@
 //
 //  Player.swift
 //
-//  Part VI of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 6 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/07/16.
 //  Copyright © 2016 Roger Boesch. All rights reserved.
 //
-//  Part VI: Created a enemy plane class
+//  Part 6: Created a enemy plane class
 //
 
 import SceneKit

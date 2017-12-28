@@ -1,13 +1,13 @@
 //
 //  HUD.swift
 //
-//  Part III of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 3 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 11.11.17.
 //  Copyright © 2017 Roger Boesch. All rights reserved.
 //
-//  This class I have newly introduced in part III. It's purpose
+//  This class I have newly introduced in Part 3. It's purpose
 //  is to show information, like points, time etc. to the user.
 //  At the moment the number of catched rings.
 //

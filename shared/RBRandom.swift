@@ -5,7 +5,7 @@
 //  Created by Roger Boesch on 13/01/17.
 //  Copyright © 2017 Roger Boesch. All rights reserved.
 //
-//  This class I have newly introduced in part III. It's mainly and abstraction
+//  This class I have newly introduced in Part 3. It's mainly and abstraction
 //  class for the classes and methods available in GameKit. It allows a better
 // random handling then those available in system library.
 

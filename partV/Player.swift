@@ -1,7 +1,7 @@
 //
 //  Player.swift
 //
-//  Part V of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 5 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/07/16.
@@ -10,7 +10,7 @@
 
 import SceneKit
 
-// New in part V: We control the plane direction
+// New in Part 5: We control the plane direction
 enum PlayerDirection {
     case none, down, left, up, right
 }
@@ -25,7 +25,7 @@ class Player : GameObject {
     private var _cameraNode: SCNNode?
     private var _playerNode: SCNNode?
 
-    // New in part V: We control the plane direction
+    // New in Part 5: We control the plane direction
     private var _upDownDirection: PlayerDirection = .none       // Vertical direction
     private var _leftRightDirection: PlayerDirection = .none    // Side direction
 
@@ -45,7 +45,7 @@ class Player : GameObject {
         var eulerX: CGFloat = 0
         var eulerZ: CGFloat = 0
 
-        // New in part V: We control minimum/maximum height
+        // New in Part 5: We control minimum/maximum height
         if (_upDownDirection == .down) {
             if (self.position.y <= Game.Player.minimumHeight) {
                 stopMovingUpDown()
@@ -61,7 +61,7 @@ class Player : GameObject {
             eulerX = -degreesToRadians(value: Game.Player.upDownAngle)
         }
         
-        // New in part V: We control minimum/maximum left/right
+        // New in Part 5: We control minimum/maximum left/right
         if (_leftRightDirection == .left) {
             if (self.position.x >= Game.Player.maximumLeft) {
                 stopMovingLeftRight()
@@ -128,7 +128,7 @@ class Player : GameObject {
     // MARK: - Camera adjustment
 
     private func adjustCamera() {
-        // New in part V: move the camera according to the fly direction
+        // New in Part 5: move the camera according to the fly direction
         var position = _cameraNode!.position
         
         if (_leftRightDirection == .left) {
@@ -150,7 +150,7 @@ class Player : GameObject {
     }
     
     // -------------------------------------------------------------------------
-    // MARK: - New in part V: Move Actions
+    // MARK: - New in Part 5: Move Actions
     
     func moveUp() {
         let oldDirection = _upDownDirection
@@ -311,7 +311,7 @@ class Player : GameObject {
         self.addChildNode(_playerNode!)
         
         // Contact box
-        // Part III: Instead of use the plane itself we add a collision node to the player object
+        // Part 3: Instead of use the plane itself we add a collision node to the player object
         let boxMaterial = SCNMaterial()
         boxMaterial.diffuse.contents = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.0)
         

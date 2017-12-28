@@ -1,7 +1,7 @@
 //
 //  GameViewController.swift
 //
-//  Part V of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 5 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/07/16.
@@ -19,7 +19,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
     private var _level: GameLevel!
     private var _hud: HUD!
 
-    // New in part V: Use CoreMotion to fly the plane
+    // New in Part 5: Use CoreMotion to fly the plane
     private var _motionManager = CMMotionManager()
     private var _startAttitude: CMAttitude?             // Start attitude
     private var _currentAttitude: CMAttitude?           // Current attitude
@@ -38,7 +38,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
     }
 
     // -------------------------------------------------------------------------
-    // MARK: - Render delegate (New in Part IV)
+    // MARK: - Render delegate (New in Part 4)
     
     func renderer(_ renderer: SCNSceneRenderer, didSimulatePhysicsAtTime time: TimeInterval) {
         guard _level != nil else { return }
@@ -51,7 +51,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
     // MARK: - Gesture recognoizers
     
     @objc private func handleTap(_ gestureRecognize: UITapGestureRecognizer) {
-        // New in part IV: A tap is used to restart the level (see tutorial)
+        // New in Part 4: A tap is used to restart the level (see tutorial)
         if _level.state == .loose || _level.state == .win {
             _level.stop()
             _level = nil
@@ -71,7 +71,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
                 self.hud.message("READY?", information: "- Touch screen to start -")
             }
         }
-        // New in part V: A tap is used to start the level (see tutorial)
+        // New in Part 5: A tap is used to start the level (see tutorial)
         else if _level.state == .ready {
             _startAttitude = _currentAttitude
             _level.start()
@@ -151,7 +151,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Part III: HUD is created and assigned to view and game level
+        // Part 3: HUD is created and assigned to view and game level
         _hud = HUD(size: self.view.bounds.size)
         _level.hud = _hud
         _sceneView.overlaySKScene = _hud.scene

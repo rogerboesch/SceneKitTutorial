@@ -1,7 +1,7 @@
 //
 //  HUD.swift
 //
-//  Part IV of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 4 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 11.11.17.
@@ -40,7 +40,7 @@ class HUD {
                 _rings.text = String(format: "%d RINGS", value)
             }
             
-            // New in part IV: Animated HUD informations (check RB+SKAction.swift for details)
+            // New in Part 4: Animated HUD informations (check RB+SKAction.swift for details)
             let scaling: CGFloat = 3
             let action = SKAction.zoomWithNode(_rings, amount: CGPoint.make(scaling, scaling), oscillations: 1, duration: 0.5)
             _rings.run(action)
@@ -72,7 +72,7 @@ class HUD {
     // -------------------------------------------------------------------------
     
     func message(_ str: String, information: String? = nil) {
-        // New in part IV: Used for game over and win messages
+        // New in Part 4: Used for game over and win messages
         _message.text = str
         _message.isHidden = false
         
@@ -88,7 +88,7 @@ class HUD {
     // -------------------------------------------------------------------------
     
     func info(_ str: String) {
-        // New in part IV: Uses for additional info when show messages
+        // New in Part 4: Uses for additional info when show messages
 
         _info.text = str
         _info.isHidden = false
@@ -101,7 +101,7 @@ class HUD {
     // -------------------------------------------------------------------------
 
     func reset() {
-        // New in part IV: Reset is needed whenever start the level
+        // New in Part 4: Reset is needed whenever start the level
 
         _message.text = ""
         _message.isHidden = true

@@ -1,7 +1,7 @@
 //
 //  Player.swift
 //
-//  Part II of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part 2 of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/07/16.
