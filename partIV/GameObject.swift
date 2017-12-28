@@ -1,5 +1,6 @@
 //
 //  GameObject.swift
+//
 //  Part IV of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
@@ -24,8 +25,6 @@ class GameObject : SCNNode {
     private var _internalID: Int = 0
     private var _tag = 0
     private var _state = GameObjecState.initialized
-
-    private var _score = 0
     
     // -------------------------------------------------------------------------
     // MARK: - Propertiues
@@ -62,17 +61,6 @@ class GameObject : SCNNode {
         set(value) {
             rbDebug("State of \(self) changed from \(_state) to \(value)")
             _state = value
-        }
-    }
-
-    // -------------------------------------------------------------------------
-    
-    var score: Int {
-        get {
-            return _score
-        }
-        set(value) {
-            _score = value
         }
     }
     

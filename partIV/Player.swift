@@ -1,13 +1,13 @@
 //
 //  Player.swift
 //
-//  Part III of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part IV of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/07/16.
 //  Copyright © 2016 Roger Boesch. All rights reserved.
 //
-//  Part IV: Now the ring objects it's derrived from GameObject instead of SCNNode
+//  Part IV: Now the player objects is derrived from GameObject instead of SCNNode
 //
 
 import SceneKit
