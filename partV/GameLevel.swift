@@ -1,16 +1,12 @@
 //
 //  GameLevel.swift
 //
-//  Part III of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part V of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/10/16.
 //  Copyright © 2016 Roger Boesch. All rights reserved.
 //
-//  New in part IV:
-//  The game has become a game loop. A main concept used in any pro game
-//  While you can create SceneKit games without this, it open's some b iug
-//  advantages which are covered in more detail in the tutorial
 
 import UIKit
 import SceneKit
@@ -264,7 +260,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
         _player = Player()
         _player!.state = .alive
         
-        _player!.position = SCNVector3(Game.Level.width/2, 4, Game.Level.start)
+        _player!.position = SCNVector3(Game.Level.width/2, CGFloat(Game.Player.minimumHeight), Game.Level.start)
         self.rootNode.addChildNode(_player!)
         
         _gameObjects.append(_player!)

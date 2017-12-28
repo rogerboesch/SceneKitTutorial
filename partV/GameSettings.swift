@@ -1,7 +1,7 @@
 //
 //  GameSettings.swift
 //
-//  Part III of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part V of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 12/10/16.
@@ -10,14 +10,13 @@
 //  Structs are a very good way to structure the different application settings.
 //  Like that they are easy to read and changeable at one place
 //
-//  New in part IV: Move all constants here
 
 import UIKit
 
 struct Game {
 
     struct Level {
-        static let numberOfRings: Int = 10
+        static let numberOfRings: Int = 10                  // Number of rings in level
         
         static let width: CGFloat = 320                     // Terrain width
         static let length: CGFloat = 840                    // Terraiun length
@@ -25,7 +24,7 @@ struct Game {
 
         struct Fog {
             static let start: CGFloat = 20                  // Begin of fog
-            static let end: CGFloat = 300                   // ENd of fog
+            static let end: CGFloat = 300                   // End of fog
         }
     }
     
@@ -38,14 +37,14 @@ struct Game {
         static let upDownAngle: CGFloat = 5.0               // Angle when fly up or down
         static let leftRightAngle: CGFloat = 30.0           // Angle when fly left or right
 
-        static let minimumHeight: Float = 3.0               // Minimum height
+        static let minimumHeight: Float = 4.0               // Minimum height
         static let maximumHeight: Float = 30.0              // Maximum height
         static let maximumLeft: Float = 360.0               // Maximum left
         static let maximumRight: Float = 30.0               // Maximum right
     }
     
     struct Objects {
-        static let offset: CGFloat = 15
+        static let offset: CGFloat = 15                     // Space between objects
     }
 
     struct Physics {
@@ -59,7 +58,7 @@ struct Game {
     }
 
     struct Motion {
-        static let threshold: Double = 0.2
+        static let threshold: Double = 0.2                  // Minium threshold of accelerometer
     }
 
 }

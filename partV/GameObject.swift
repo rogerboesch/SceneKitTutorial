@@ -1,6 +1,6 @@
 //
 //  GameObject.swift
-//  Part IV of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part V of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 31.10.17.
@@ -24,9 +24,7 @@ class GameObject : SCNNode {
     private var _internalID: Int = 0
     private var _tag = 0
     private var _state = GameObjecState.initialized
-
-    private var _score = 0
-    
+ 
     // -------------------------------------------------------------------------
     // MARK: - Propertiues
     
@@ -64,18 +62,7 @@ class GameObject : SCNNode {
             _state = value
         }
     }
-
-    // -------------------------------------------------------------------------
-    
-    var score: Int {
-        get {
-            return _score
-        }
-        set(value) {
-            _score = value
-        }
-    }
-    
+   
     // -------------------------------------------------------------------------
     // MARK: - Actions
     

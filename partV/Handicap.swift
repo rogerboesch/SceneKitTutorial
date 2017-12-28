@@ -1,15 +1,12 @@
 //
 //  Handicap.swift
 //
-//  Part IV of the SceneKit Tutorial Series 'From Zero to Hero' at:
+//  Part V of the SceneKit Tutorial Series 'From Zero to Hero' at:
 //  https://rogerboesch.github.io/
 //
 //  Created by Roger Boesch on 13/12/17.
 //  Copyright © 2017 Roger Boesch. All rights reserved.
 //
-//  New in part IV: So far we just had rings to fly trough. Now we introduce
-//  handicaps which the plane should not touch. Otherwise it crashes and the
-// game is over.
 
 import SceneKit
 
