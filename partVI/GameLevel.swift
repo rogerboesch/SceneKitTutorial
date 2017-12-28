@@ -146,10 +146,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
     // -------------------------------------------------------------------------
 
     func fireBullet(enemy: Bool, position: SCNVector3, sideDistance: CGFloat = 0, fallDistance: CGFloat = 0) -> Bullet {
-        var direction : PlaneDirection = .up
-        if enemy {
-            direction = .down
-        }
+        let direction : PlaneDirection = enemy ? .down : .up
         
         // Search in list if we have an unused bullet
         for bullet in _bullets {
