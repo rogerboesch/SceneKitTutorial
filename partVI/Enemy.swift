@@ -58,7 +58,7 @@ class Enemy : Plane {
             rbDebug("\(self) has no bullets anymore")
             return
         }
-        
+
         var position = self.position
         position.z = position.z + 1.0
         

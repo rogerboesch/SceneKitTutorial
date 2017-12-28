@@ -110,7 +110,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
         _currentAttitude = data.attitude
         
         guard _level != nil, _level?.state == .play else { return }
-
+        
         // Up/Down
         let diff1 = _startAttitude!.roll - _currentAttitude!.roll
         

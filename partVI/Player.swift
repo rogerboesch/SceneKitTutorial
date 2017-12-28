@@ -70,12 +70,16 @@ class Player : Plane {
     // -------------------------------------------------------------------------
 
     override func hit() {
+        if _crashed {
+            return
+        }
+
         if let emitter = SCNParticleSystem(named: "art.scnassets/smoke.scnp", inDirectory: nil) {
             self.addParticleSystem(emitter)
         }
         
         _crashed = true
-        
+
         moveDown()
         moveDown()
 
@@ -127,7 +131,7 @@ class Player : Plane {
             ring.hit()
         }
         else if let handicap = object as? Handicap {
-            if handicap.state != .alive {
+            if self.state != .alive {
                 return
             }
 
@@ -276,12 +280,14 @@ class Player : Plane {
         _lookAtNode!.position = lookAtForwardPosition
         addChildNode(_lookAtNode!)
         
-        // Camera Node
+        // Camera
+        let camera = SCNCamera()
+        camera.zNear = 0.1
+        camera.zFar = 600
+            
         _cameraNode = SCNNode()
-        _cameraNode!.camera = SCNCamera()
+        _cameraNode!.camera = camera
         _cameraNode!.position = cameraFowardPosition
-        _cameraNode!.camera!.zNear = 0.1
-        _cameraNode!.camera!.zFar = 600
         self.addChildNode(_cameraNode!)
         
         // Link them
