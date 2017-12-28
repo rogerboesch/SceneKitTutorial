@@ -1,6 +1,9 @@
 ### The Blog
 The code is part of my SceneKit Tutorial Serie: From Zero to Hero.
 
+![Screenshot Part 6](/screenshots/screenshot6.png)
+
+
 ### Tutorial
 - **[Part 1 - Building a Terrain](https://rogerboesch.github.io/scenekit/tutorial/games/2016/07/15/scenekit-zerotohero-I.html)**
 - **[Part 2 - Create a real player game object](https://rogerboesch.github.io/scenekit/tutorial/games/2016/10/26/scenekit-zerotohero-II.html)**
@@ -38,9 +41,6 @@ a new component and show the how and why :)
 
 
 ### Screenshots
-
-Tutorial Part 6
-![Screenshot Part 6](/screenshots/screenshot6.png)
 
 Tutorial Part 5
 ![Screenshot Part 5](/screenshots/screenshot5.png)
