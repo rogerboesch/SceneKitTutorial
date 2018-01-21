@@ -11,21 +11,21 @@ import SpriteKit
 // -----------------------------------------------------------------------------
 // MARK: - Timing functions
 
-func SKTTimingFunctionLinear(_ t: CGFloat) -> CGFloat {
+public func SKTTimingFunctionLinear(_ t: CGFloat) -> CGFloat {
     return t
 }
 
-func SKTCreateShakeFunction(_ oscillations: Int) -> (CGFloat) -> CGFloat {
+public func SKTCreateShakeFunction(_ oscillations: Int) -> (CGFloat) -> CGFloat {
     return { t in -pow(2.0, -10.0 * t) * sin(t * pi * CGFloat(oscillations) * 2.0) + 1.0 }
 }
 
 // -----------------------------------------------------------------------------
 // MARK: - Effects
 
-class SKTEffect {
+public class SKTEffect {
     
     unowned var node: SKNode
-    var duration: TimeInterval
+    public var duration: TimeInterval
     open var timingFunction: ((CGFloat) -> CGFloat)?
 
     init(node: SKNode, duration: TimeInterval) {
@@ -38,7 +38,7 @@ class SKTEffect {
     func update(_ t: CGFloat) { }
 }
 
-class SKTScaleEffect: SKTEffect {
+public class SKTScaleEffect: SKTEffect {
     var startScale: CGPoint
     var delta: CGPoint
     var previousScale: CGPoint
@@ -63,9 +63,9 @@ class SKTScaleEffect: SKTEffect {
 // -----------------------------------------------------------------------------
 // MARK: - Actions
 
-extension SKAction {
+public extension SKAction {
     
-    class func actionWithEffect(_ effect: SKTEffect) -> SKAction {
+    public class func actionWithEffect(_ effect: SKTEffect) -> SKAction {
         return SKAction.customAction(withDuration: effect.duration) { node, elapsedTime in
             var t = elapsedTime / CGFloat(effect.duration)
             
@@ -78,7 +78,7 @@ extension SKAction {
     }
 
     
-    class func zoomWithNode(_ node: SKNode, amount: CGPoint, oscillations: Int, duration: TimeInterval) -> SKAction {
+    public class func zoomWithNode(_ node: SKNode, amount: CGPoint, oscillations: Int, duration: TimeInterval) -> SKAction {
         let oldScale = CGPoint(x: node.xScale, y: node.yScale)
         let newScale = oldScale * amount
         

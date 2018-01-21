@@ -10,6 +10,7 @@
 
 import UIKit
 import SceneKit
+import RBSceneUIKit
 
 // -----------------------------------------------------------------------------
 

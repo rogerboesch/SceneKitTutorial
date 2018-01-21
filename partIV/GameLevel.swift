@@ -14,6 +14,7 @@
 
 import UIKit
 import SceneKit
+import RBSceneUIKit
 
 enum GameState {
     case initialized, play, win, loose, stopped

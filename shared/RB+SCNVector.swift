@@ -8,9 +8,9 @@
 
 import SceneKit
 
-extension SCNVector3 {
+public extension SCNVector3 {
 
-    func distance(to destination: SCNVector3) -> CGFloat {
+    public func distance(to destination: SCNVector3) -> CGFloat {
         let dx = destination.x - x
         let dy = destination.y - y
         let dz = destination.z - z

@@ -10,6 +10,7 @@
 //  Part 4: Now the ring object is derrived from GameObject instead of SCNNode
 //
 import SceneKit
+import RBSceneUIKit
 
 // -----------------------------------------------------------------------------
 

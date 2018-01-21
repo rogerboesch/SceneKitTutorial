@@ -6,18 +6,15 @@
 //  Copyright © 2016 Roger Boesch All rights reserved.
 //
 
-#if os(macOS)
-    import AppKit
-#else
-    import UIKit
-#endif
+import Foundation
+import CoreGraphics
 
 // -----------------------------------------------------------------------------
 // MARK: - Make a CGPoint
 
-extension CGPoint {
+public extension CGPoint {
     
-    static func make(_ x: CGFloat, _ y: CGFloat) -> CGPoint {
+    static public func make(_ x: CGFloat, _ y: CGFloat) -> CGPoint {
         return CGPoint(x: x, y: y)
     }
     
@@ -62,7 +59,7 @@ public extension CGPoint {
     
     // ------------------------------------------------------------------------------
     
-    func normalized() -> CGPoint {
+    internal func normalized() -> CGPoint {
         let len = length()
         
         return len>0 ? self / len : CGPoint.zero

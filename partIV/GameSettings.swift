@@ -13,6 +13,7 @@
 //  New in Part 4: Move all constants here
 
 import UIKit
+import RBSceneUIKit
 
 struct Game {
 

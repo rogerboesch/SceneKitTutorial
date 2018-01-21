@@ -13,6 +13,7 @@ import SceneKit
 import SpriteKit
 import CoreMotion
 import GameController
+import RBSceneUIKit
 
 class GameViewController: UIViewController, SCNSceneRendererDelegate {
     private var _sceneView: SCNView!

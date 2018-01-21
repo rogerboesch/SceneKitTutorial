@@ -10,6 +10,7 @@
 
 import UIKit
 import SceneKit
+import RBSceneUIKit
 
 // -----------------------------------------------------------------------------
 
@@ -43,7 +44,7 @@ class GameLevel: SCNScene, SCNSceneRendererDelegate, SCNPhysicsContactDelegate {
             return generator.valueFor(x: x, y: y)
         }
 
-        _terrain!.create(withImage: #imageLiteral(resourceName: "ringTexture"))
+        _terrain!.create(withImage: #imageLiteral(resourceName: "grass"))
         _terrain!.position = SCNVector3Make(0, 0, 0)
         self.rootNode.addChildNode(_terrain!)
     }

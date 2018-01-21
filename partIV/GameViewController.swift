@@ -11,6 +11,7 @@
 import UIKit
 import SceneKit
 import SpriteKit
+import RBSceneUIKit
 
 class GameViewController: UIViewController, SCNSceneRendererDelegate {
     private var _sceneView: SCNView!
