@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SceneKit
 
 enum RBLogSeverity : Int {
     case debug = 0
