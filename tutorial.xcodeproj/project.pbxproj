@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		824ECAFF2014EEF70032AB6F /* textures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824ECAFE2014EEF70032AB6F /* textures.xcassets */; };
+		824ECB002014EEF70032AB6F /* textures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824ECAFE2014EEF70032AB6F /* textures.xcassets */; };
+		824ECB012014EEF70032AB6F /* textures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824ECAFE2014EEF70032AB6F /* textures.xcassets */; };
+		824ECB022014EEF70032AB6F /* textures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824ECAFE2014EEF70032AB6F /* textures.xcassets */; };
+		824ECB032014EEF70032AB6F /* textures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824ECAFE2014EEF70032AB6F /* textures.xcassets */; };
+		824ECB042014EEF70032AB6F /* textures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824ECAFE2014EEF70032AB6F /* textures.xcassets */; };
 		DB55EF031FE38FA900C2E1CC /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB55EF001FE38FA800C2E1CC /* assets.xcassets */; };
 		DB55EF041FE38FA900C2E1CC /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DB55EF011FE38FA900C2E1CC /* art.scnassets */; };
 		DB55EF081FE38FC200C2E1CC /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB55EF001FE38FA800C2E1CC /* assets.xcassets */; };
@@ -110,6 +116,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		824ECAFE2014EEF70032AB6F /* textures.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = textures.xcassets; sourceTree = "<group>"; };
 		DB16F22D1D34C291006BA99C /* partI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = partI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB16F23E1D34C292006BA99C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB55EEE91FE38E9900C2E1CC /* partII.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = partII.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -299,6 +306,7 @@
 				DBDCD5DE1FF42E0100C38FCF /* sounds */,
 				DB55EF451FE3939400C2E1CC /* Base.lproj */,
 				DB55EF011FE38FA900C2E1CC /* art.scnassets */,
+				824ECAFE2014EEF70032AB6F /* textures.xcassets */,
 				DB55EF001FE38FA800C2E1CC /* assets.xcassets */,
 			);
 			name = assets;
@@ -542,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB55EF041FE38FA900C2E1CC /* art.scnassets in Resources */,
+				824ECAFF2014EEF70032AB6F /* textures.xcassets in Resources */,
 				DB55EF471FE393B900C2E1CC /* Base.lproj in Resources */,
 				DB55EF031FE38FA900C2E1CC /* assets.xcassets in Resources */,
 			);
@@ -552,6 +561,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB55EF081FE38FC200C2E1CC /* assets.xcassets in Resources */,
+				824ECB002014EEF70032AB6F /* textures.xcassets in Resources */,
 				DB55EF091FE38FC700C2E1CC /* art.scnassets in Resources */,
 				DB55EF461FE3939400C2E1CC /* Base.lproj in Resources */,
 			);
@@ -562,6 +572,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBCE99751FEFAF3B00DEE81F /* Base.lproj in Resources */,
+				824ECB022014EEF70032AB6F /* textures.xcassets in Resources */,
 				DBCE99761FEFAF3E00DEE81F /* art.scnassets in Resources */,
 				DBCE99771FEFAF4200DEE81F /* assets.xcassets in Resources */,
 			);
@@ -572,6 +583,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBDCD5821FF2CE6B00C38FCF /* Base.lproj in Resources */,
+				824ECB032014EEF70032AB6F /* textures.xcassets in Resources */,
 				DBDCD5831FF2CE7000C38FCF /* art.scnassets in Resources */,
 				DBDCD5841FF2CE7300C38FCF /* assets.xcassets in Resources */,
 			);
@@ -584,6 +596,7 @@
 				DBDCD5B61FF3D57400C38FCF /* Base.lproj in Resources */,
 				DBDCD5B71FF3D57800C38FCF /* art.scnassets in Resources */,
 				DBDCD5DF1FF42E0100C38FCF /* sounds in Resources */,
+				824ECB042014EEF70032AB6F /* textures.xcassets in Resources */,
 				DBDCD5B81FF3D57C00C38FCF /* assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBF8C6001FEE741C00FAADF4 /* Base.lproj in Resources */,
+				824ECB012014EEF70032AB6F /* textures.xcassets in Resources */,
 				DBF8C6011FEE742200FAADF4 /* art.scnassets in Resources */,
 				DBCE995C1FEFA13300DEE81F /* assets.xcassets in Resources */,
 			);
