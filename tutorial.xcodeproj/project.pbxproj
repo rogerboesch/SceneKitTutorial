@@ -487,34 +487,28 @@
 				TargetAttributes = {
 					DB16F22C1D34C291006BA99C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = F46T393V5A;
 						DevelopmentTeamName = "Roger Boesch";
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					DB55EEE81FE38E9900C2E1CC = {
 						CreatedOnToolsVersion = 9.1;
-						DevelopmentTeam = F46T393V5A;
 						ProvisioningStyle = Automatic;
 					};
 					DBCE99601FEFAF1500DEE81F = {
 						CreatedOnToolsVersion = 9.1;
-						DevelopmentTeam = F46T393V5A;
 						ProvisioningStyle = Automatic;
 					};
 					DBDCD56D1FF2CE1400C38FCF = {
 						CreatedOnToolsVersion = 9.1;
-						DevelopmentTeam = F46T393V5A;
 						ProvisioningStyle = Automatic;
 					};
 					DBDCD5A11FF3D54B00C38FCF = {
 						CreatedOnToolsVersion = 9.1;
-						DevelopmentTeam = F46T393V5A;
 						ProvisioningStyle = Automatic;
 					};
 					DBF8C5EB1FEE73D700FAADF4 = {
 						CreatedOnToolsVersion = 9.1;
-						DevelopmentTeam = F46T393V5A;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -841,6 +835,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = partI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -858,6 +853,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = partI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -879,7 +875,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = F46T393V5A;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = partII/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -900,7 +896,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F46T393V5A;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = partII/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -922,7 +918,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = F46T393V5A;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = partIV/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -943,7 +939,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F46T393V5A;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = partIV/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -965,7 +961,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = F46T393V5A;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = partV/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -986,7 +982,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F46T393V5A;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = partV/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1008,7 +1004,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = F46T393V5A;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = partVI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1029,7 +1025,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F46T393V5A;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = partVI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1051,7 +1047,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = F46T393V5A;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = partIII/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1072,7 +1068,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F46T393V5A;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = partIII/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
