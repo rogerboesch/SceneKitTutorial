@@ -87,11 +87,10 @@ public class RBPerlinNoiseGenerator {
     // MARK: - Initialisation
 
     public init(seed: Int? = nil) {
-        if (seed == nil) {
+        if let seed = seed {
+            _seed = seed
+        } else {
             _seed = Int(arc4random()) % Int(INT32_MAX)
-        }
-        else {
-            _seed = seed!
         }
     }
 

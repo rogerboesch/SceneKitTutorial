@@ -88,11 +88,10 @@ public class RBTerrain: SCNNode {
     // MARK: - Terrain formula
     
     public func valueFor(x: Int32, y: Int32) ->Double {
-        if (formula == nil) {
+        guard let formula = formula else {
             return 0.0
         }
-        
-        return formula!(x, y)
+        return formula(x, y)
     }
 
     // -------------------------------------------------------------------------
@@ -174,7 +173,7 @@ public class RBTerrain: SCNNode {
         let uvSource = SCNGeometrySource(data: uvData as Data, semantic: SCNGeometrySource.Semantic.texcoord, vectorCount: uvList.count, usesFloatComponents: true, componentsPerVector: 2, bytesPerComponent: sizeOfFloat, dataOffset: 0, dataStride: sizeOfVecFloat)
         sources.append(uvSource)
         
-        _terrainGeometry = SCNGeometry(sources: sources, elements: elements)
+        let terrainGeometry = SCNGeometry(sources: sources, elements: elements)
         
         let material = SCNMaterial()
         material.isLitPerPixel = true
@@ -184,10 +183,12 @@ public class RBTerrain: SCNNode {
         material.diffuse.contentsTransform = SCNMatrix4MakeScale(RBFloat(_terrainWidth*2), RBFloat(_terrainLength*2), 1)
         material.diffuse.intensity = 1.0
 
-        _terrainGeometry!.firstMaterial = material
-        _terrainGeometry!.firstMaterial!.isDoubleSided = true
+        terrainGeometry.firstMaterial = material
+        terrainGeometry.firstMaterial!.isDoubleSided = true
         
-        return _terrainGeometry!
+        _terrainGeometry = terrainGeometry
+        
+        return terrainGeometry
     }
     
     // -------------------------------------------------------------------------
@@ -217,8 +218,12 @@ public class RBTerrain: SCNNode {
     // -------------------------------------------------------------------------
     // MARK: - Initialisation
     
-    public init(width: Int, length: Int, scale: Int) {
+    public override init() {
         super.init()
+    }
+    
+    public convenience init(width: Int, length: Int, scale: Int) {
+        self.init()
         
         _terrainWidth = width
         _terrainLength = length
