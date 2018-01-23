@@ -117,4 +117,17 @@ let moveAction = SCNAction.moveBy(x: 0, y: 0, z: 8, duration: 60)
 player.runAction(moveAction)
 
 
+SCNTransaction.begin()
+SCNTransaction.animationDuration = 20
+cameraNode.position.x = -1.5
+SCNTransaction.commit()
+
+DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(20)) {
+    SCNTransaction.begin()
+    SCNTransaction.animationDuration = 20
+    cameraNode.position.x = 1.5
+    SCNTransaction.commit()
+    
+}
 //: [Next](@next)
+
