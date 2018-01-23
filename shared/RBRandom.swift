@@ -12,20 +12,20 @@
 import Foundation
 import GameKit
 
-extension Int {
-    static func random(maxValue: Int) -> Int {
+public extension Int {
+    static public func random(maxValue: Int) -> Int {
         let rand = Int(arc4random_uniform(UInt32(maxValue)))
         return rand
     }
 }
 
-class RBRandom {
+public class RBRandom {
     private let source = GKMersenneTwisterRandomSource()
     
     // -------------------------------------------------------------------------
     // MARK: - Get random numbers
     
-    class func boolean() -> Bool {
+    public class func boolean() -> Bool {
         if RBRandom.sharedInstance.integer(0, 1) == 1 {
             return true
         }
@@ -35,19 +35,19 @@ class RBRandom {
 
     // -------------------------------------------------------------------------
 
-    class func integer(_ from: Int, _ to: Int) -> Int {
+    public class func integer(_ from: Int, _ to: Int) -> Int {
         return RBRandom.sharedInstance.integer(from, to)
     }
 
     // -------------------------------------------------------------------------
     
-    class func timeInterval(_ from: Int, _ to: Int) -> TimeInterval {
+    public class func timeInterval(_ from: Int, _ to: Int) -> TimeInterval {
         return TimeInterval(RBRandom.sharedInstance.integer(from, to))
     }
     
     // -------------------------------------------------------------------------
     
-    class func cgFloat(_ from: CGFloat, _ to: CGFloat) -> CGFloat {
+    public class func cgFloat(_ from: CGFloat, _ to: CGFloat) -> CGFloat {
         return CGFloat(RBRandom.sharedInstance.integer(Int(from), Int(to)))
     }
     
@@ -63,7 +63,7 @@ class RBRandom {
     // -------------------------------------------------------------------------
     // MARK: - Initialisation
     
-    init() {
+    public init() {
         source.seed = UInt64(CFAbsoluteTimeGetCurrent())
     }
     

@@ -12,6 +12,7 @@
 //  The most important is the state which is described in detail in the tutorial.
 
 import SceneKit
+import RBSceneUIKit
 
 enum GameObjecState {
     case initialized, alive, died, stopped

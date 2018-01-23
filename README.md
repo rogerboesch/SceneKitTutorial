@@ -43,18 +43,23 @@ a new component and show the how and why :)
 ### Screenshots
 
 Tutorial Part 5
+
 ![Screenshot Part 5](/screenshots/screenshot5.png)
 
 Tutorial Part 4
+
 ![Screenshot Part 4](/screenshots/screenshot4.png)
 
 Tutorial Part 3
+
 ![Screenshot Part 3](/screenshots/screenshot3.png)
 
 Tutorial Part 2
+
 ![Screenshot Part 2](/screenshots/screenshot2.png)
 
 Tutorial Part 1
+
 ![Screenshot Part 1](/screenshots/screenshot1.png)
 
 

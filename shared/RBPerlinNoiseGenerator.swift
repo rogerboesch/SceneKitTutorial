@@ -6,9 +6,10 @@
 //  Based on Obj-C code created by Steven Troughton-Smith on 24/12/11.
 //
 
-import UIKit
+import Foundation
 
-class RBPerlinNoiseGenerator {
+public class RBPerlinNoiseGenerator {
+    
     private static let noiseX = 1619
     private static let noiseY = 31337
     private static let noiseSeed = 1013
@@ -57,7 +58,7 @@ class RBPerlinNoiseGenerator {
     // -------------------------------------------------------------------------
     // MARK: - Calculate a noise value for x,y
 
-    func valueFor(x: Int32, y: Int32) ->Double {
+    public func valueFor(x: Int32, y: Int32) ->Double {
         let octaves = 2
         let p: Double = 1/2
         let zoom: Double = 6
@@ -85,12 +86,11 @@ class RBPerlinNoiseGenerator {
     // -------------------------------------------------------------------------
     // MARK: - Initialisation
 
-    init(seed: Int? = nil) {
-        if (seed == nil) {
+    public init(seed: Int? = nil) {
+        if let seed = seed {
+            _seed = seed
+        } else {
             _seed = Int(arc4random()) % Int(INT32_MAX)
-        }
-        else {
-            _seed = seed!
         }
     }
 

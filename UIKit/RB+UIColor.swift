@@ -7,10 +7,11 @@
 //
 
 import SceneKit
+import RBSceneUIKit
 
 // -----------------------------------------------------------------------------
 
-let UIRedColorList:[UIColor] = [
+public let UIRedColorList:[UIColor] = [
     UIColor(hex: "#800000"),
     UIColor(hex: "#AA0000"),
     UIColor(hex: "#D40000"),
@@ -20,7 +21,7 @@ let UIRedColorList:[UIColor] = [
 
 // -----------------------------------------------------------------------------
 
-let UIPurpleColorList:[UIColor] = [
+public let UIPurpleColorList:[UIColor] = [
     UIColor(hex: "#660067"),
     UIColor(hex: "#810080"),
     UIColor(hex: "#BE2AED"),
@@ -30,7 +31,7 @@ let UIPurpleColorList:[UIColor] = [
 
 // -----------------------------------------------------------------------------
 
-let UINeonColorList:[UIColor] = [
+public let UINeonColorList:[UIColor] = [
     UIColor(hex: "#FF15AC"),
     UIColor(hex: "#FF6900"),
     UIColor(hex: "#FFFF01"),
@@ -40,7 +41,7 @@ let UINeonColorList:[UIColor] = [
 
 // -----------------------------------------------------------------------------
 
-let UIGreenColorList:[UIColor] = [
+public let UIGreenColorList:[UIColor] = [
     UIColor(hex: "#075907"),
     UIColor(hex: "#097609"),
     UIColor(hex: "#70AF1A"),
@@ -50,7 +51,7 @@ let UIGreenColorList:[UIColor] = [
 
 // -----------------------------------------------------------------------------
 
-let UIGrayColorList:[UIColor] = [
+public let UIGrayColorList:[UIColor] = [
     UIColor(hex: "#C0CBCB"),
     UIColor(hex: "#CAC6BF"),
     UIColor(hex: "#B4ACA1"),
@@ -62,7 +63,7 @@ let UIGrayColorList:[UIColor] = [
 // -----------------------------------------------------------------------------
 // MARK: - Hex support
 
-extension UIColor {
+public extension UIColor {
     
     public convenience init(hex: String) {
         var str = hex
@@ -98,7 +99,7 @@ extension UIColor {
 // -----------------------------------------------------------------------------
 // MARK: - Random colors
 
-extension UIColor {
+public extension UIColor {
     
     public static func random(list: [UIColor]) -> UIColor {
         let maxValue = list.count

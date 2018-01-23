@@ -10,6 +10,7 @@
 
 import UIKit
 import SceneKit
+import RBSceneUIKit
 
 class Bullet : GameObject {
     private static let speedDistance: CGFloat = 80.0    // Distance taken in time

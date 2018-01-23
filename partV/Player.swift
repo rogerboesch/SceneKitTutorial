@@ -9,6 +9,7 @@
 //
 
 import SceneKit
+import RBSceneUIKit
 
 // New in Part 5: We control the plane direction
 enum PlayerDirection {

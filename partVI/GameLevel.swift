@@ -10,6 +10,7 @@
 
 import UIKit
 import SceneKit
+import RBSceneUIKit
 
 enum GameState {
     case initialized, ready, play, win, loose, stopped
@@ -365,7 +366,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
             return generator.valueFor(x: x, y: y)
         }
         
-        _terrain!.create(withColor: UIColor.green)
+        _terrain!.create(withImage: #imageLiteral(resourceName: "grass"))
         _terrain!.position = SCNVector3Make(0, 0, 0)
         self.rootNode.addChildNode(_terrain!)
     }
@@ -412,7 +413,7 @@ class GameLevel: SCNScene, SCNPhysicsContactDelegate {
 
     func create() {
         // New in Part 4: A skybox is used to show a game's background
-        self.background.contents = UIImage(named: "art.scnassets/skybox")
+        self.background.contents = #imageLiteral(resourceName: "skybox")
 
         // New in Part 5: Add fog effect
         self.fogStartDistance = Game.Level.Fog.start

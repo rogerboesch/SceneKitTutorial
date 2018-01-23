@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import SceneKit
 
-enum RBLogSeverity : Int {
+internal enum RBLogSeverity : Int {
     case debug = 0
     case info = 1
     case warning = 2
@@ -17,13 +16,13 @@ enum RBLogSeverity : Int {
     case none = 4
 }
 
-public class RBLog: NSObject {
+internal class RBLog: NSObject {
     static var _severity = RBLogSeverity.debug
     
     // -----------------------------------------------------------------------------
     // MARK: - Properties
     
-    static var severity: RBLogSeverity {
+    static internal var severity: RBLogSeverity {
         get {
             return _severity
         }
@@ -35,7 +34,7 @@ public class RBLog: NSObject {
     // -------------------------------------------------------------------------
     // MARK: - Logging severity
         
-    static func error(message: String) {
+    static internal func error(message: String) {
         if (RBLogSeverity.error.rawValue >= RBLog.severity.rawValue) {
             RBLog.log(message: message, severity: "⛔️")
         }
@@ -43,7 +42,7 @@ public class RBLog: NSObject {
     
     // -------------------------------------------------------------------------
     
-    static func warning(message: String) {
+    static internal func warning(message: String) {
         if (RBLogSeverity.warning.rawValue >= RBLog.severity.rawValue) {
             RBLog.log(message: message, severity: "⚠️")
         }
@@ -51,7 +50,7 @@ public class RBLog: NSObject {
 
     // -------------------------------------------------------------------------
 
-    static func info(message: String) {
+    static internal func info(message: String) {
         if (RBLogSeverity.info.rawValue >= RBLog.severity.rawValue) {
             RBLog.log(message: message, severity: "▷")
         }
@@ -59,7 +58,7 @@ public class RBLog: NSObject {
     
     // -------------------------------------------------------------------------
 
-    static func debug(message: String) {
+    static internal func debug(message: String) {
         if (RBLogSeverity.debug.rawValue >= RBLog.severity.rawValue) {
             RBLog.log(message: message, severity: "→")
         }
@@ -74,7 +73,7 @@ public class RBLog: NSObject {
     
     // -------------------------------------------------------------------------
    
-    public static func write(message: String) {
+    internal static func write(message: String) {
         print(message)
     }
     
@@ -85,28 +84,28 @@ public class RBLog: NSObject {
 // -----------------------------------------------------------------------------
 // MARK: - Short functions
 
-func rbError(_ message: String,  _ args: CVarArg...) {
+public func rbError(_ message: String,  _ args: CVarArg...) {
     let str = String(format: message, arguments: args)
     RBLog.error(message: str)
 }
 
 // -----------------------------------------------------------------------------
 
-func rbWarning(_ message: String,  _ args: CVarArg...) {
+public func rbWarning(_ message: String,  _ args: CVarArg...) {
     let str = String(format: message, arguments: args)
     RBLog.warning(message: str)
 }
 
 // -----------------------------------------------------------------------------
 
-func rbInfo(_ message: String,  _ args: CVarArg...) {
+public func rbInfo(_ message: String,  _ args: CVarArg...) {
     let str = String(format: message, arguments: args)
     RBLog.info(message: str)
 }
 
 // -----------------------------------------------------------------------------
 
-func rbDebug(_ message: String,  _ args: CVarArg...) {
+public func rbDebug(_ message: String,  _ args: CVarArg...) {
     let str = String(format: message, arguments: args)
     RBLog.debug(message: str)
 }

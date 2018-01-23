@@ -12,6 +12,7 @@
 //
 
 import SceneKit
+import RBSceneUIKit
 
 // -----------------------------------------------------------------------------
 
@@ -24,7 +25,7 @@ class Ring : SCNNode {
         super.init()
 
         let ringMaterial = SCNMaterial()
-        ringMaterial.diffuse.contents = UIImage(named: "art.scnassets/ringTexture")
+        ringMaterial.diffuse.contents = #imageLiteral(resourceName: "ringTexture")
         ringMaterial.diffuse.wrapS = .repeat
         ringMaterial.diffuse.wrapT = .repeat
         ringMaterial.diffuse.contentsTransform = SCNMatrix4MakeScale(3, 1, 1)

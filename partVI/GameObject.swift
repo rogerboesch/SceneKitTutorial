@@ -8,6 +8,7 @@
 //
 
 import SceneKit
+import RBSceneUIKit
 
 enum GameObjecState {
     case initialized, alive, died, stopped

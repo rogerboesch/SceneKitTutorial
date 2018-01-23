@@ -13,6 +13,7 @@
 //
 
 import SpriteKit
+import RBSceneUIKit
 
 class HUD {
     private var _scene: SKScene!
