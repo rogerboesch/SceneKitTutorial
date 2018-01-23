@@ -1,6 +1,6 @@
 //: [Previous](@previous)
-
 //: # [Part 1 - Building a Terrain](https://rogerboesch.github.io/scenekit/tutorial/games/2016/07/15/scenekit-zerotohero-I.html)
+//: ### Please open the Assitant editor Live View to see the result
 
 import Foundation
 import UIKit
@@ -9,7 +9,6 @@ import PlaygroundSupport
 import RBSceneUIKit
 
 let scene = SCNScene()
-
 //: ## The Game
 //:The Game itself it’s implemented in a child class of SCNScene (like written before). Because we create later different levels of the Game, I name this new class TutorialLevel1. The beauty of Swift and SceneKit is the shortness of code you need to realise a Game. But let us take a look now, what we do in that GameLevel class. Mainly it’s the place to create all the Game objects and control them. So implement the gameplay and logic of our 3D shooter Game.
 //:At first we have just two Game objects: The terrain and a player class, while the focus of tutorial 1 is the terrain class. But we implement a simple player class already to “ride” over the terrain and extend it later. But first to the terrain class.
