@@ -5,12 +5,12 @@ This code is part of my SceneKit Tutorial Serie: From Zero to Hero.
 
 
 ### Tutorial
-- **[Part 1 - Building a Terrain](https://rogerboesch.github.io/scenekit/tutorial/games/2016/07/15/scenekit-zerotohero-I.html)**
-- **[Part 2 - Create a real player game object](https://rogerboesch.github.io/scenekit/tutorial/games/2016/10/26/scenekit-zerotohero-II.html)**
-- **[Part 3 - Add life to your terrain](https://rogerboesch.github.io/scenekit/tutorial/games/2017/12/23/scenekit-zerotohero-III.html)**
-- **[Part 4 - Implement a Game Loop](https://rogerboesch.github.io/scenekit/tutorial/games/2017/12/26/scenekit-zerotohero-IV.html)**
-- **[Part 5 - Fly smoothly with CoreMotion](https://rogerboesch.github.io/scenekit/tutorial/games/2017/12/27/scenekit-zerotohero-V.html)**
-- **[Part 6 - Finish the game (The missing parts)](https://rogerboesch.github.io/scenekit/tutorial/games/2017/12/29/scenekit-zerotohero-VI.html)**
+- **[Part 1 - Building a Terrain](http://www.rogerboesch.com/posts/scenekit-zerotohero-i.html)**
+- **[Part 2 - Create a real player game object](http://www.rogerboesch.com/posts/scenekit-zerotohero-ii.html)**
+- **[Part 3 - Add life to your terrain](http://www.rogerboesch.com/posts/scenekit-zerotohero-iii.html)**
+- **[Part 4 - Implement a Game Loop](http://www.rogerboesch.com/posts/scenekit-zerotohero-iv.html)**
+- **[Part 5 - Fly smoothly with CoreMotion](http://www.rogerboesch.com/posts/scenekit-zerotohero-v.html)**
+- **[Part 6 - Finish the game (The missing parts)](http://www.rogerboesch.com/posts/scenekit-zerotohero-vi.html)**
 - *Part 7 - ARKit: Play in your environment*
 - *Part 8 - Multiplatform: Our game on macOS*
 - *Part 9 - tvOS: A great gaming platform*
