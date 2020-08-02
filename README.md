@@ -5,12 +5,12 @@ This code is part of my SceneKit Tutorial Serie: From Zero to Hero.
 
 
 ### Tutorial
-- **[Part 1 - Building a Terrain](http://www.rogerboesch.com/posts/scenekit-zerotohero-i.html)**
-- **[Part 2 - Create a real player game object](http://www.rogerboesch.com/posts/scenekit-zerotohero-ii.html)**
-- **[Part 3 - Add life to your terrain](http://www.rogerboesch.com/posts/scenekit-zerotohero-iii.html)**
-- **[Part 4 - Implement a Game Loop](http://www.rogerboesch.com/posts/scenekit-zerotohero-iv.html)**
-- **[Part 5 - Fly smoothly with CoreMotion](http://www.rogerboesch.com/posts/scenekit-zerotohero-v.html)**
-- **[Part 6 - Finish the game (The missing parts)](http://www.rogerboesch.com/posts/scenekit-zerotohero-vi.html)**
+- **[Part 1 - Building a Terrain](http://www.rogerboesch.com/scenekit-zerotohero-I)**
+- **[Part 2 - Create a real player game object](http://www.rogerboesch.com/scenekit-zerotohero-II)**
+- **[Part 3 - Add life to your terrain](http://www.rogerboesch.com/scenekit-zerotohero-III)**
+- **[Part 4 - Implement a Game Loop](http://www.rogerboesch.com/scenekit-zerotohero-IV)**
+- **[Part 5 - Fly smoothly with CoreMotion](http://www.rogerboesch.com/scenekit-zerotohero-V)**
+- **[Part 6 - Finish the game (The missing parts)](http://www.rogerboesch.com/scenekit-zerotohero-VI)**
 - *Part 7 - ARKit: Play in your environment*
 - *Part 8 - Multiplatform: Our game on macOS*
 - *Part 9 - tvOS: A great gaming platform*
