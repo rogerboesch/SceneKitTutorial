@@ -14,12 +14,12 @@ typealias RBTerrainFormula = ((Int32, Int32) -> (Double))
 // -----------------------------------------------------------------------------
 
 class RBTerrain: SCNNode {
-    private var _heightScale = 256
     private var _terrainWidth = 32
     private var _terrainLength = 32
     private var _terrainGeometry: SCNGeometry?
     private var _texture: UIImage?
     private var _color = UIColor.white
+    private var _tileSize: Float = 1.0
     
     var formula: RBTerrainFormula?
     
@@ -41,7 +41,7 @@ class RBTerrain: SCNNode {
     }
     
     // -------------------------------------------------------------------------
-
+    
     var texture: UIImage? {
         get {
             return _texture
@@ -77,7 +77,7 @@ class RBTerrain: SCNNode {
                 let material = SCNMaterial()
                 material.diffuse.contents = _color
                 material.isLitPerPixel = true
-
+                
                 _terrainGeometry!.firstMaterial = material
                 _terrainGeometry!.firstMaterial!.isDoubleSided = true
             }
@@ -94,10 +94,10 @@ class RBTerrain: SCNNode {
         
         return formula!(x, y)
     }
-
+    
     // -------------------------------------------------------------------------
     // MARK: - Geometry creation
-
+    
     private func createGeometry() ->SCNGeometry {
         let cint: CInt = 0
         let sizeOfCInt = MemoryLayout.size(ofValue: cint)
@@ -105,71 +105,69 @@ class RBTerrain: SCNNode {
         let sizeOfFloat = MemoryLayout.size(ofValue: float)
         let vec2: vector_float2 = vector2(0, 0)
         let sizeOfVecFloat = MemoryLayout.size(ofValue: vec2)
-
+        
         let w: CGFloat = CGFloat(_terrainWidth)
         let h: CGFloat = CGFloat(_terrainLength)
-        let scale: Double = Double(_heightScale)
-
+        
         var sources = [SCNGeometrySource]()
         var elements = [SCNGeometryElement]()
-
+        
         let maxElements: Int = _terrainWidth * _terrainLength * 4
         var vertices = [SCNVector3](repeating:SCNVector3Zero, count:maxElements)
         var normals = [SCNVector3](repeating:SCNVector3Zero, count:maxElements)
         var uvList: [vector_float2] = []
         
         var vertexCount = 0
-        let factor: CGFloat = 0.5
-
+        
         for y in 0...Int(h-2) {
             for x in 0...Int(w-1) {
-                let topLeftZ = valueFor(x: Int32(x), y: Int32(y+1)) / scale
-                let topRightZ = valueFor(x: Int32(x+1), y: Int32(y+1)) / scale
-                let bottomLeftZ = valueFor(x: Int32(x), y: Int32(y)) / scale
-                let bottomRightZ = valueFor(x: Int32(x+1), y: Int32(y)) / scale
+                let topLeftZ = valueFor(x: Int32(x), y: Int32(y+1))
+                let topRightZ = valueFor(x: Int32(x+1), y: Int32(y+1))
+                let bottomLeftZ = valueFor(x: Int32(x), y: Int32(y))
+                let bottomRightZ = valueFor(x: Int32(x+1), y: Int32(y))
                 
-                let topLeft = SCNVector3Make(Float(x)-Float(factor), Float(topLeftZ), Float(y)+Float(factor))
-                let topRight = SCNVector3Make(Float(x)+Float(factor), Float(topRightZ), Float(y)+Float(factor))
-                let bottomLeft = SCNVector3Make(Float(x)-Float(factor), Float(bottomLeftZ), Float(y)-Float(factor))
-                let bottomRight = SCNVector3Make(Float(x)+Float(factor), Float(bottomRightZ), Float(y)-Float(factor))
-
+                let topLeft = SCNVector3Make(Float(x)-Float(_tileSize), Float(topLeftZ), Float(y)+Float(_tileSize))
+                let topRight = SCNVector3Make(Float(x)+Float(_tileSize), Float(topRightZ), Float(y)+Float(_tileSize))
+                let bottomLeft = SCNVector3Make(Float(x)-Float(_tileSize), Float(bottomLeftZ), Float(y)-Float(_tileSize))
+                let bottomRight = SCNVector3Make(Float(x)+Float(_tileSize), Float(bottomRightZ), Float(y)-Float(_tileSize))
+                
                 vertices[vertexCount] = bottomLeft
                 vertices[vertexCount+1] = topLeft
                 vertices[vertexCount+2] = topRight
                 vertices[vertexCount+3] = bottomRight
-
+                
                 let xf = CGFloat(x)
                 let yf = CGFloat(y)
-
+                
                 uvList.append(vector_float2(Float(xf/w), Float(yf/h)))
-                uvList.append(vector_float2(Float(xf/w), Float((yf+factor)/h)))
-                uvList.append(vector_float2(Float((xf+factor)/w), Float((yf+factor)/h)))
-                uvList.append(vector_float2(Float((xf+factor)/w), Float(yf/h)))
+                uvList.append(vector_float2(Float(xf/w), Float((yf+CGFloat(_tileSize))/h)))
+                uvList.append(vector_float2(Float((xf+CGFloat(_tileSize))/w), Float((yf+CGFloat(_tileSize))/h)))
+                uvList.append(vector_float2(Float((xf+CGFloat(_tileSize))/w), Float(yf/h)))
                 
                 vertexCount += 4
             }
         }
-
+        
         let source = SCNGeometrySource(vertices: vertices)
         sources.append(source)
-
+        
         let geometryData = NSMutableData()
-
+        
         var geometry: CInt = 0
         while (geometry < CInt(vertexCount)) {
             let bytes: [CInt] = [geometry, geometry+2, geometry+3, geometry, geometry+1, geometry+2]
             geometryData.append(bytes, length: sizeOfCInt*6)
             geometry += 4
         }
-
+        
         let element = SCNGeometryElement(data: geometryData as Data, primitiveType: .triangles, primitiveCount: vertexCount/2, bytesPerIndex: sizeOfCInt)
         elements.append(element)
         
         for normalIndex in 0...vertexCount-1 {
-            normals[normalIndex] = SCNVector3Make(0, 0, -1)
+            normals[normalIndex] = SCNVector3Make(0, 0, 1)
         }
         sources.append(SCNGeometrySource(normals: normals))
-
+        
         let uvData = NSData(bytes: uvList, length: uvList.count * sizeOfVecFloat)
         let uvSource = SCNGeometrySource(data: uvData as Data, semantic: SCNGeometrySource.Semantic.texcoord, vectorCount: uvList.count, usesFloatComponents: true, componentsPerVector: 2, bytesPerComponent: sizeOfFloat, dataOffset: 0, dataStride: sizeOfVecFloat)
         sources.append(uvSource)
@@ -183,7 +181,7 @@ class RBTerrain: SCNNode {
         material.diffuse.wrapT = .repeat
         material.diffuse.contentsTransform = SCNMatrix4MakeScale(Float(_terrainWidth*2), Float(_terrainLength*2), 1)
         material.diffuse.intensity = 1.0
-
+        
         _terrainGeometry!.firstMaterial = material
         _terrainGeometry!.firstMaterial!.isDoubleSided = true
         
@@ -206,30 +204,29 @@ class RBTerrain: SCNNode {
     }
     
     // -------------------------------------------------------------------------
-
+    
     func create(withColor color: UIColor) {
         let terrainNode = SCNNode(geometry: createGeometry())
         self.addChildNode(terrainNode)
         
         self.color = color
     }
-
+    
     // -------------------------------------------------------------------------
     // MARK: - Initialisation
     
-    init(width: Int, length: Int, scale: Int) {
+    init(width: Int, length: Int, tileSize: Float) {
         super.init()
-        
         _terrainWidth = width
         _terrainLength = length
-        _heightScale = scale
+        _tileSize = tileSize/2.0
     }
-
+    
     // -------------------------------------------------------------------------
-
+    
     required init(coder: NSCoder) {
         fatalError("Not yet implemented")
     }
-
+    
     // -------------------------------------------------------------------------
 }
