@@ -1,7 +1,7 @@
 **Update February 2024**:: I have written the first part of this tutorial almost eight years ago.
 SceneKit is available on Vision OS but is no longer used for immersive 3D rendering.
 Instead, you have to use RealityKit. But since this information is still very useful,
-I have created a little [E-Book](https://visionsos.substack.com) that contains the entire SceneKit Tutorial.
+I have created a little [E-Book](https://visionos.substack.com) that contains the entire SceneKit Tutorial.
 
 
 ### The Tutorial
@@ -60,8 +60,8 @@ Tutorial Part 2
 Tutorial Part 1
 ![Screenshot Part 1](/screenshots/screenshot1.png)
 
-Follow me on [Substack](https://visionsos.substack.com) to get the next tutorial:
-[Vision OS: Create an Immersive App with RealityKit](https://visionsos.substack.com)
+Follow me on [Substack](https://visionos.substack.com) to get the next tutorial:
+[Vision OS: Create an Immersive App with RealityKit](https://visionos.substack.com)
 
 
 **Important**:
