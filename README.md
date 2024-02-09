@@ -1,16 +1,23 @@
-### The Blog
-This code is part of my SceneKit Tutorial Serie: From Zero to Hero.
+**Update February 2024**:: I have written the first part of this tutorial almost eight years ago.
+SceneKit is available on Vision OS but is no longer used for immersive 3D rendering.
+Instead, you have to use RealityKit. But since this information is still very useful,
+I have created a little [E-Book](https://visionsos.substack.com) that contains the entire SceneKit Tutorial.
+
+
+### The Tutorial
+
+The code is part of my SceneKit Tutorial Serie: From Zero to Hero.
 
 ![Screenshot Part 6](/screenshots/screenshot0.png)
 
 
 ### Tutorial
-- **[Part 1 - Building a Terrain](http://www.rogerboesch.com/scenekit-zerotohero-I/)**
-- **[Part 2 - Create a real player game object](http://www.rogerboesch.com/scenekit-zerotohero-II/)**
-- **[Part 3 - Add life to your terrain](http://www.rogerboesch.com/scenekit-zerotohero-III/)**
-- **[Part 4 - Implement a Game Loop](http://www.rogerboesch.com/scenekit-zerotohero-IV/)**
-- **[Part 5 - Fly smoothly with CoreMotion](http://www.rogerboesch.com/scenekit-zerotohero-V/)**
-- **[Part 6 - Finish the game (The missing parts)](http://www.rogerboesch.com/scenekit-zerotohero-VI/)**
+- Chapter 1 - Building a Terrain
+- Chapter 2 - Create a real player game object
+- Chapter 3 - Add life to your terrain
+- Chapter 4 - Implement a Game Loop
+- Chapter 5 - Fly smoothly with CoreMotion
+- Chapter 6 - Finish the game (The missing parts)
 
 *Remarks*:
 - *Code is now updated to be Swift 4 compliant*
@@ -53,10 +60,13 @@ Tutorial Part 2
 Tutorial Part 1
 ![Screenshot Part 1](/screenshots/screenshot1.png)
 
+Follow me on [Substack](https://visionsos.substack.com) to get the next tutorial:
+[Vision OS: Create an Immersive App with RealityKit](https://visionsos.substack.com)
+
 
 **Important**:
 *Feel free to use this code in every way you want, but please consider also
-to give esomething back to the community.*
+to give something back to the community.*
 
 *I don't own the license rights for the assets used in this tutorials,
 so before you use them for something else then self-learning, please check by yourself the license behind
